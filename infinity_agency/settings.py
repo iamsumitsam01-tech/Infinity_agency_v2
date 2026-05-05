@@ -353,7 +353,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
