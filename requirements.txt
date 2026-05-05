@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 asgiref==3.11.1
 certifi==2026.4.22
 cffi==2.0.0
 charset-normalizer==3.4.7
 cryptography==47.0.0
-Django==6.0.4
+Django==5.0
 django-allauth==65.16.1
 django-jazzmin==3.0.4
-gunicorn==26.0.0
+gunicorn==21.2.0
 idna==3.13
 packaging==26.2
 pillow==12.2.0
@@ -17,32 +16,5 @@ requests==2.33.1
 sqlparse==0.5.5
 tzdata==2026.1
 urllib3==2.6.3
-=======
-asgiref==3.11.1
-certifi==2026.4.22
-cffi==2.0.0
-charset-normalizer==3.4.7
-cryptography==47.0.0
-Django==6.0.4
-django-allauth==65.16.1
-django-jazzmin==3.0.4
-gunicorn==26.0.0
-idna==3.13
-packaging==26.2
-pillow==12.2.0
-pycparser==3.0
-PyJWT==2.12.1
-requests==2.33.1
-sqlparse==0.5.5
-tzdata==2026.1
-urllib3==2.6.3
-<<<<<<< HEAD
-<<<<<<< HEAD
-whitenoise
->>>>>>> 1b5ce9c (Initial commit)
-=======
-whitenoise==6.7.0
->>>>>>> fd93d03 (fix  whitenoise version)
-=======
-whitenoise==6.12.0
->>>>>>> 786706a (fixed static css)
+whitenoise==6.6.0
+
