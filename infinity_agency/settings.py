@@ -202,9 +202,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-monlu2ak_kyt39=t@ykucm*w3w5lch1zuiyl**so*-7ustgbzd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -226,6 +224,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -345,8 +345,8 @@ SOCIALACCOUNT_AUTO_SIGNUP = True
 
 
 
-RAZORPAY_KEY_ID = "your_key_id"
-RAZORPAY_KEY_SECRET = "your_secret"
+RAZORPAY_KEY_ID = os.environ.get('RAZORPAY_KEY_ID')
+RAZORPAY_KEY_SECRET = os.environ.get('RAZORPAY_KEY_SECRET')
 ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = '/media/'
