@@ -47,7 +47,7 @@ def contact(request):
             f"Name: {name}\nEmail: {email}\nMessage: {user_message}",
             settings.EMAIL_HOST_USER,
             ["iamsumitsam01@gmail.com"],  # 🔥 put your real email
-            fail_silently=False,
+            fail_silently=True
         )
 
         # ✅ SUCCESS MESSAGE
@@ -76,7 +76,7 @@ def admin_login(request):
         else:
             return render(request, 'login.html', {'error': 'Invalid credentials'})
 
-    return render(request, 'account/login.html')
+    return render(request, 'login.html')
 
 
 def admin_logout(request):
