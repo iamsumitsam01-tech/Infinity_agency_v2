@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+
+<h2>Checkout Page</h2>
+
+<p>Logged in as: {{ user.email }}</p>
+
+<h3>Service: Website Development</h3>
+<p>Price: ₹4999</p>
+
+<button id="payBtn">Pay Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById("payBtn").onclick = function () {
+
+    var options = {
+        "key": "rzp_test_SjdKRIJzaTgSsz",  // replace
+        "amount": 499900,  // ₹4999 in paise
+        "currency": "INR",
+        "name": "Infinity Agency",
+        "description": "Website Service",
+
+        "handler": function (response){
+            alert("Payment Successful!");
+            window.location.href = "/success/";
+        },
+
+        "prefill": {
+            "name": "{{ user.first_name }}",
+            "email": "{{ user.email }}"
+        },
+
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.open();
+};
+</script>
+
+</body>
+</html>
