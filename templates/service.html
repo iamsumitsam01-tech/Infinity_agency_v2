@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% load static %}
 
@@ -209,3 +210,216 @@
 {% endblock content %}
 
 
+=======
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="services-hero">
+
+  <div class="hero-left">
+    <p class="tag">WHAT WE DO</p>
+
+    <h1>
+      We don’t just design.<br>
+      We build growth systems.
+    </h1>
+
+    <p class="desc">
+      From ads to websites, we create high-converting digital assets
+      that generate real revenue.
+    </p>
+
+    <a href="#" class="btn-primary">Our Services</a>
+  </div>
+
+  <div class="hero-right">
+
+    <div class="service-box">
+      <h3>Meta Advertising</h3>
+      <p>Facebook & Instagram ads that scale profitably.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Website Development</h3>
+      <p>Modern websites designed to convert visitors.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Landing Pages</h3>
+      <p>High-converting pages built for campaigns.</p>
+    </div>
+
+  </div>
+
+  <!-- GLOW BLOBS -->
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  
+
+{% for service in services %}
+
+<div class="service-card reveal">
+
+  <div class="service-text">
+    <h2>{{ service.title }}</h2>
+
+    <p>{{ service.description }}</p>
+
+    <div class="price">₹{{ service.price }}</div>
+
+    <a href="#" class="btn-primary buy-btn">Get This Service</a>
+  </div>
+
+  <div class="service-image">
+    <img src="{{ service.image.url }}" alt="{{ service.title }}">
+  </div>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+
+<section class="pricing">
+  <div class="pricing-bg">
+    <div class="square s1"></div>
+    <div class="square s2"></div>
+    <div class="square s3"></div>
+</div>
+
+  <h2>Pricing Plans</h2>
+  <p class="subtitle">Choose a plan that fits your business growth</p>
+
+  <div class="pricing-grid">
+
+    <!-- BASIC -->
+    <div class="price-card">
+      <h3>Starter</h3>
+      <p class="price-tag">₹5,000</p>
+
+      <ul>
+        <li>1 Ad Campaign</li>
+        <li>Basic Targeting</li>
+        <li>Monthly Report</li>
+      </ul>
+
+      <a href="#" class="btn buy-btn">Buy Now</a>
+  
+    </div>
+
+
+    <!-- PRO (HIGHLIGHTED) -->
+    <div class="price-card featured">
+        <div class="badge"> Most Popular </div>
+      <h3>Growth</h3>
+      <p class="price-tag">₹10,000</p>
+
+      <ul>
+        <li>3 Ad Campaigns</li>
+        <li>Advanced Targeting</li>
+        <li>Landing Page Included</li>
+        <li>Weekly Optimization</li>
+      </ul>
+
+      <a href="#" class="btn buy-btn">Buy Now</a>
+    </div>
+
+
+    <!-- PREMIUM -->
+    <div class="price-card">
+      <h3>Scale</h3>
+      <p class="price-tag">₹20,000</p>
+
+      <ul>
+        <li>Unlimited Campaigns</li>
+        <li>Full Funnel Setup</li>
+        <li>Website + Ads</li>
+        <li>Priority Support</li>
+      </ul>
+     <a href="#" class="btn buy-btn">Buy Now</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="trust-section">
+
+    <h2>Why Businesses Choose Us</h2>
+    <p class="trust-subtitle">We don’t just run ads — we deliver real growth</p>
+
+    <div class="trust-grid">
+
+        <div class="trust-card">
+            <h3>🚀 Proven Results</h3>
+            <p>Our strategies are focused on real ROI, not just clicks.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>🎯 Smart Targeting</h3>
+            <p>We reach the right audience at the right time.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>⚡ Fast Execution</h3>
+            <p>Campaigns go live quickly with optimized performance.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>📈 Growth Focused</h3>
+            <p>Every step is designed to scale your business.</p>
+        </div>
+
+    </div>
+
+    <!-- MINI TRUST LINE -->
+    <div class="trust-proof">
+        ⭐ Trusted by 50+ clients &nbsp;&nbsp; • &nbsp;&nbsp; ⭐ 4.9/5 average rating
+    </div>
+
+</section>
+
+
+
+<section class="faq">
+
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <h4>How fast will I get results?</h4>
+            <p>Usually within 2–4 weeks depending on your business.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Do you provide support?</h4>
+            <p>Yes, full support and optimization is included.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Can I upgrade my plan later?</h4>
+            <p>Yes, you can upgrade anytime.</p>
+        </div>
+
+    </div>
+
+</section>
+{% endblock content %}
+
+
+>>>>>>> 1b5ce9c (Initial commit)

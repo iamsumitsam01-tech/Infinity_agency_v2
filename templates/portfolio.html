@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% load static %}
 
@@ -119,4 +120,127 @@
   </div>
 </section>
 
+=======
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="portfolio-hero">
+  <div class="container">
+    <h1>We Build Growth Systems 🚀</h1>
+    <p>Marketing + Design + Data = Real Results</p>
+
+    <div class="hero-stats">
+      <div class="glass">
+        <h2>120+</h2>
+        <span>Clients</span>
+      </div>
+      <div class="glass">
+        <h2>4.5X</h2>
+        <span>ROI</span>
+      </div>
+      <div class="glass">
+        <h2>2M+</h2>
+        <span>Leads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies container">
+
+  <div class="case-card glass">
+    <img src="{% static 'img/img/FUNNEL.jpg' %}">
+    <div class="case-content">
+      <h3>Stock Funnel</h3>
+      <p>5,000+ leads in 30 days</p>
+      <span>ROI: 3.8X</span>
+    </div>
+  </div>
+
+  <div class="case-card glass">
+    <img src="{% static 'img/img/growth.png' %}">
+    <div class="case-content">
+      <h3>Instagram Growth</h3>
+      <p>2K → 50K followers</p>
+      <span>+2400%</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- VIDEO -->
+<section class="video-section container">
+  <div class="video-box glass">
+
+    <video id="autoVideo" muted loop playsinline>
+      <source src="{% static 'video/video.mp4' %}" type="video/mp4">
+    </video>
+
+    <button onclick="toggleSound()">🔊 Sound</button>
+
+  </div>
+
+  <div class="video-text">
+    <h2>See our Strategy in Action</h2>
+    <p>Watch how we build high-converting funnels</p>
+  </div>
+</section>
+
+  <div class="video-text">
+    <h2>See Our Strategy in Action</h2>
+    <p>Watch how we build high-converting funnels</p>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="container">
+    <h2>Results That Speak</h2>
+
+    <div class="results-grid">
+      <div class="glass">
+        <h3>+300%</h3>
+        <p>Conversion</p>
+      </div>
+      <div class="glass">
+        <h3>₹50L+</h3>
+        <p>Revenue</p>
+      </div>
+      <div class="glass">
+        <h3>10K+</h3>
+        <p>Leads/month</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonials">
+  <div class="container">
+    <h2>What Clients Say</h2>
+
+    <div class="testimonial-card glass">
+      <p>"Best decision we made. Serious growth in 2 months."</p>
+      <h4>- Rahul Sharma</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Want Results Like This?</h2>
+    <button class="btn">Book Free Call</button>
+  </div>
+</section>
+
+>>>>>>> 1b5ce9c (Initial commit)
 {% endblock %}

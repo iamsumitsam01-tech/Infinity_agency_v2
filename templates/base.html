@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 {% load socialaccount %}
 <!DOCTYPE html>
@@ -321,4 +322,329 @@ function toggleSound() {
 </div>
 
 </body>
+=======
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Agency</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="{% if user.is_authenticated %}logged-in{% endif %}">
+
+<!-- ✅ NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">Infinity</div>
+
+    <nav class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'service' %}">Services</a>
+        <a href="{% url 'portfolio' %}">Portfolio</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+
+{% if user.is_authenticated %}
+
+<div class="user-dropdown">
+  <div class="user-box" id="profileBtn">
+
+    {% if user.socialaccount_set.all %}
+      <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="profile-img">
+    {% endif %}
+
+    <span>{{ user.get_full_name|default:user.username }}</span>
+
+  </div>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="/dashboard/">Dashboard</a>
+    <a href="#" id="logoutBtn">Logout</a>
+  </div>
+</div>
+
+{% else %}
+
+<a href="/accounts/google/login/" class="nav-btn">Get Started</a>
+
+{% endif %}
+
+
+    <!-- ✅ PUT IT HERE (INSIDE HEADER, BEFORE CLOSING) -->
+    
+
+</header>
+
+
+<!-- ✅ PAGE CONTENT WILL COME HERE -->
+{% block content %}{% endblock %}
+
+
+<!-- ✅ FOOTER (YOUR CODE) -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h2 class="footer-logo">Infinity</h2>
+            <p>We help brands grow with high-converting websites, powerful ads, and smart digital strategies.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'service' %}">Services</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Jodhpur, Rajasthan, India</p>
+            <p>Email: info@infinityagency.com</p>
+            <p>Phone: +91 XXXXX XXXXX</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Infinity Ad Agency. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- ✅ LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+
+    <span class="close">&times;</span>
+
+    <h2>Welcome Back 👋</h2>
+    <p>Continue to Infinity Agency</p>
+
+    {#<a href="{% provider_login_url 'google' %}" class="google-btn" id="googleLoginBtn"> #}
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
+      Continue with Google
+    </a>
+
+  </div>
+</div>
+
+
+<div id="loader" class="loader">
+  <div class="spinner"></div>
+  <p>Logging you in...</p>
+</div>
+
+<div id="toast" class="toast">Login Successful 🎉</div>
+
+<div id="logoutPopup" class="logout-popup">
+<div id="globalLoader" class="global-loader">
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <p>Connecting to Google...</p>
+  </div>
+</div>    
+  <div class="logout-box">
+    <h3>Are you sure?</h3>
+    <p>You will be logged out</p>
+
+    <div class="logout-actions">
+      <button id="cancelLogout">Cancel</button>
+      <button id="confirmLogout">Logout</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ✅ SCRIPT -->
+<!-- ✅ FIXED MAIN SCRIPT -->
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("loginModal");
+  const closeBtn = document.querySelector(".close");
+
+  const buttons = [
+    document.getElementById("getStartedBtn"),
+    document.getElementById("heroGetStartedBtn")
+  ];
+  const googleBtn = document.getElementById("googleLoginBtn");
+const globalLoader = document.getElementById("globalLoader");
+
+if (googleBtn && globalLoader) {
+  googleBtn.addEventListener("click", function () {
+    globalLoader.style.display = "flex";
+  });
+}
+
+  const profileBtn = document.getElementById("profileBtn");
+  const dropdown = document.getElementById("dropdownMenu");
+
+  const logoutBtn = document.getElementById("logoutBtn");
+  const loader = document.getElementById("loader");
+
+
+  const toast = document.getElementById("toast");
+
+
+  // ✅ MODAL OPEN
+  buttons.forEach(btn => {
+    if (btn && modal) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.classList.add("show");
+      });
+    }
+  });
+
+  // ✅ MODAL CLOSE
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", function() {
+      modal.classList.add("hidden");
+    });
+  }
+
+  // ✅ CLICK OUTSIDE CLOSE
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.classList.add("hidden");
+    }
+  });
+
+
+  // ✅ GOOGLE LOADER
+  if (googleBtn && loader) {
+    googleBtn.addEventListener("click", function () {
+      loader.style.display = "flex";
+    });
+  }
+
+
+  // ✅ PROFILE DROPDOWN
+  if (profileBtn && dropdown) {
+    profileBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle("show");
+    });
+  }
+
+  window.addEventListener("click", function () {
+    if (dropdown) dropdown.classList.remove("show");
+  });
+
+
+  // ✅ LOGOUT POPUP
+  function showLogoutPopup() {
+    const popup = document.getElementById("logoutPopup");
+    popup.style.display = "flex";
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      showLogoutPopup();
+    });
+  }
+
+  const cancelBtn = document.getElementById("cancelLogout");
+  const confirmBtn = document.getElementById("confirmLogout");
+
+  if (cancelBtn) {
+    cancelBtn.onclick = function () {
+      document.getElementById("logoutPopup").style.display = "none";
+    };
+  }
+
+  if (confirmBtn) {
+    confirmBtn.onclick = function () {
+      window.location.href = "/accounts/logout/?next=/";
+    };
+  }
+
+
+  // ✅ TOAST AFTER LOGIN
+  if (document.body.classList.contains("logged-in") && toast) {
+    setTimeout(() => {
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+
+    }, 800);
+  }
+
+});
+
+
+  // Show after 5 seconds
+  setTimeout(() => {
+    document.getElementById("popup").style.display = "block";
+  }, 5000);
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Exit intent (mouse up)
+  document.addEventListener("mouseleave", function () {
+    document.getElementById("popup").style.display = "block";
+  });
+
+</script>
+<script>
+const video = document.getElementById('autoVideo');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+}, {
+    threshold: 0.6 // 60% visible
+});
+
+observer.observe(video);
+</script>
+
+<script>
+const video = document.getElementById('autoVideo');
+
+function toggleSound() {
+    video.muted = !video.muted;
+    video.play();
+}
+</script>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
+  💬
+</a>
+<div class="popup" id="popup">
+  <div class="popup-box">
+    
+    <span class="close-btn" onclick="closePopup()">×</span>
+
+    <h3>🚀 Free Strategy Call</h3>
+    <p>Limited slots available today</p>
+
+    <a href="#" class="popup-btn">Book Now</a>
+
+  </div>
+</div>
+
+</body>
+>>>>>>> 1b5ce9c (Initial commit)
 </html>
