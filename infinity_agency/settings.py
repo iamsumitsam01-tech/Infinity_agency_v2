@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 """
 Django settings for infinity_agency project.
@@ -355,4 +354,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEBUG = False
 ALLOWED_HOSTS = ['*']
->>>>>>> 1b5ce9c (Initial commit)
