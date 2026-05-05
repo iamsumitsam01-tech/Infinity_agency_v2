@@ -1,5 +1,4 @@
 {% load static %}
-{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +28,6 @@
 <div class="user-dropdown">
   <div class="user-box" id="profileBtn">
 
-    {% if user.socialaccount_set.all %}
-      <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="profile-img">
-    {% endif %}
 
     <span>{{ user.get_full_name|default:user.username }}</span>
 
