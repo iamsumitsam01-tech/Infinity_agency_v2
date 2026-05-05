@@ -314,7 +314,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = os.environ.get('iamsumitsam01@gmial.com')
-EMAIL_HOST_PASSWORD = os.environ.get('')
+EMAIL_HOST_PASSWORD = os.environ.get('jpvt xzun rqol czye')
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
