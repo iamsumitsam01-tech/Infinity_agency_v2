@@ -63,50 +63,6 @@ def update_status(request, id, status):
     contact.save()
     return redirect('crm')
 
-
-@login_required
-def crm(request):
-    contacts = Contact.objects.all()
-
-    # SEARCH
-    query = request.GET.get('q')
-    if query:
-        contacts = contacts.filter(
-            Q(name__icontains=query) |
-            Q(email__icontains=query)
-        )
-
-    # FILTER
-    status = request.GET.get('status')
-    if status:
-        contacts = contacts.filter(status=status)
-
-    # PAGINATION
-    from django.core.paginator import Paginator
-    paginator = Paginator(contacts, 5)
-    page_number = request.GET.get('page')
-    contacts = paginator.get_page(page_number)
-
-    # STATS
-    total = Contact.objects.count()
-    new = Contact.objects.filter(status='new').count()
-    contacted = Contact.objects.filter(status='contacted').count()
-    closed = Contact.objects.filter(status='closed').count()
-
-    conversion_rate = 0
-    if total > 0:
-        conversion_rate = int((closed / total) * 100)
-
-    return render(request, 'crm.html', {
-        'contacts': contacts,
-        'total': total,
-        'new': new,
-        'contacted': contacted,
-        'closed': closed,
-        'conversion_rate': conversion_rate
-    })
-
-
 def admin_login(request):
     if request.method == "POST":
         username = request.POST.get('username')
