@@ -23,7 +23,7 @@ certifi==2026.4.22
 cffi==2.0.0
 charset-normalizer==3.4.7
 cryptography==47.0.0
-Django==5.0.6
+Django==6.0.4
 django-allauth==65.16.1
 django-jazzmin==3.0.4
 gunicorn==26.0.0
@@ -37,8 +37,12 @@ sqlparse==0.5.5
 tzdata==2026.1
 urllib3==2.6.3
 <<<<<<< HEAD
+<<<<<<< HEAD
 whitenoise
 >>>>>>> 1b5ce9c (Initial commit)
 =======
 whitenoise==6.7.0
 >>>>>>> fd93d03 (fix  whitenoise version)
+=======
+whitenoise==6.12.0
+>>>>>>> 786706a (fixed static css)
