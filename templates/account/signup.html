@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% load socialaccount %}
 
 <!DOCTYPE html>
@@ -32,39 +31,4 @@
 </p>
 
 </body>
-=======
-{% load socialaccount %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sign Up</title>
-</head>
-<body>
-
-<h2>Sign Up</h2>
-
-<form method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-
-    {{ form.as_p }}
-
-    <button type="submit">Sign Up</button>
-</form>
-
-<br><br>
-
-<!-- Google Login Button -->
-<a href="{% provider_login_url 'google' %}">
-    <button type="button">Continue with Google</button>
-</a>
-
-<br><br>
-
-<p>Already have an account? 
-    <a href="{% url 'account_login' %}">Login</a>
-</p>
-
-</body>
->>>>>>> 1b5ce9c (Initial commit)
 </html>
