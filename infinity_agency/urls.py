@@ -20,7 +20,23 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import Sitemap
 
+
+class StaticSitemap(Sitemap):
+    priority = 0.8
+    changefreq = 'weekly'
+
+    def items(self):
+        return ['home']
+
+    def location(self, item):
+        return '/'
+
+
+sitemaps = {
+    'static': StaticSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # ✅ MUST be here
@@ -31,7 +47,7 @@ urlpatterns += [
     path(
         'sitemap.xml',
         sitemap,
-        {'sitemaps': {}},
+        {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'
     ),
 ]
