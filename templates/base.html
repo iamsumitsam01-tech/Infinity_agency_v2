@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +42,9 @@
 
 {% else %}
 
-<a href="/accounts/google/login/" class="nav-btn">Get Started</a>
+<a href="{% provider_login_url 'google' %}" class="nav-btn">
+    Get Started
+</a>
 
 {% endif %}
 
@@ -99,7 +102,7 @@
     <h2>Welcome Back 👋</h2>
     <p>Continue to Infinity Agency</p>
 
-    <a href="/accounts/google/login/" class="google-btn" id="googleLoginBtn">
+    <a href="{% provider_login_url 'google' %}" class="google-btn" id="googleLoginBtn">
   <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
   Continue with Google
 </a>
