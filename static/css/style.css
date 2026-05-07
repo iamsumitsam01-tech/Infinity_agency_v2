@@ -2182,10 +2182,7 @@ html, body {
     border-radius: 15px;
 }
 
-.navbar a {
-    font-size: 14px;
-    margin: 0 6px;
-}
+
 
 .logo {
     font-size: 20px;
@@ -2193,67 +2190,64 @@ html, body {
 }
 
 }
+
 /* =========================================
-   PERFECT MOBILE NAVBAR FIX
-   ONLY MOBILE - DESKTOP SAFE
+   FINAL MOBILE NAVBAR FIX
 ========================================= */
 
 @media screen and (max-width: 768px) {
 
-  /* Prevent horizontal scroll */
-  html,
   body {
-    overflow-x: hidden;
-    width: 100%;
+    padding-top: 85px !important;
+    overflow-x: hidden !important;
   }
 
-  body {
-    padding-top: 90px;
-  }
-
-  /* ===== NAVBAR ===== */
+  /* NAVBAR */
 
   .navbar {
 
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed !important;
 
-    width: calc(100% - 20px);
-    max-width: 100%;
+    top: 8px !important;
+    left: 50% !important;
 
-    padding: 12px 16px;
+    transform: translateX(-50%) !important;
 
-    border-radius: 16px;
+    width: calc(100% - 16px) !important;
+    max-width: 100% !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 14px 16px !important;
 
-    z-index: 999999;
+    border-radius: 18px !important;
 
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(18px);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    background: rgba(255,255,255,0.92) !important;
+
+    backdrop-filter: blur(18px) !important;
+
+    z-index: 999999 !important;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
   }
 
-  /* ===== LOGO ===== */
+  /* LOGO */
 
   .logo {
-    font-size: 18px;
-    font-weight: 700;
-    white-space: nowrap;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #111 !important;
   }
 
-  /* ===== HIDE DESKTOP LINKS ===== */
+  /* HIDE DESKTOP LINKS */
 
   .nav-links {
     display: none !important;
   }
 
-  /* ===== MENU BUTTON ===== */
+  /* MENU BUTTON */
 
   .menu-btn {
 
@@ -2265,125 +2259,79 @@ html, body {
     width: 42px;
     height: 42px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.06);
 
-    font-size: 22px;
-    cursor: pointer;
+    font-size: 24px !important;
 
     color: #111;
 
-    transition: 0.3s ease;
+    cursor: pointer;
   }
 
-  .menu-btn:active {
-    transform: scale(0.95);
-  }
-
-  /* ===== MOBILE MENU ===== */
+  /* MOBILE MENU */
 
   .mobile-menu {
 
-    position: fixed;
+    position: fixed !important;
 
-    top: 80px;
-    left: 10px;
-    right: 10px;
+    top: 78px !important;
+    left: 8px !important;
+    right: 8px !important;
 
-    width: auto;
+    width: auto !important;
 
-    display: none;
-    flex-direction: column;
+    padding: 10px !important;
 
-    padding: 10px;
+    border-radius: 18px !important;
 
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.98) !important;
 
     backdrop-filter: blur(20px);
 
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 
-    z-index: 999999;
+    z-index: 999999 !important;
   }
-
-  .mobile-menu.show {
-    display: flex;
-  }
-
-  /* ===== MOBILE LINKS ===== */
 
   .mobile-menu a {
 
+    display: block;
+
     width: 100%;
 
-    padding: 16px 18px;
+    padding: 16px 18px !important;
 
     border-radius: 12px;
 
-    text-decoration: none;
-
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 500;
 
-    color: #111;
+    color: #111 !important;
 
-    transition: 0.3s ease;
+    text-decoration: none;
   }
 
   .mobile-menu a:hover {
     background: #f3f4f6;
   }
 
-  /* ===== NAV BUTTON ===== */
+  /* BUTTON */
 
   .nav-btn {
 
-    margin-left: 0;
+    width: 100% !important;
 
-    width: 100%;
+    margin: 10px 0 0 0 !important;
 
-    text-align: center;
+    padding: 14px !important;
 
-    padding: 14px;
+    border-radius: 12px !important;
 
-    margin-top: 8px;
+    text-align: center !important;
 
-    border-radius: 12px;
-
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-  /* ===== USER BOX ===== */
-
-  .user-box {
-
-    padding: 5px 8px;
-    gap: 6px;
-
-    border-radius: 10px;
-  }
-
-  .profile-img,
-  .user-img {
-
-    width: 34px;
-    height: 34px;
-  }
-
-  /* ===== DROPDOWN ===== */
-
-  .dropdown-menu {
-
-    right: 0;
-    top: 55px;
-
-    width: 180px;
-
-    border-radius: 14px;
+    font-size: 15px !important;
   }
 
 }
