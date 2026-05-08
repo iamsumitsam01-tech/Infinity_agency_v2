@@ -2018,15 +2018,15 @@ html, body {
 
     /* HIDE DESKTOP MENU */
 
-    .nav-links{
-        display: none;
+    .nav-links {
+        display: none !important;
     }
 
     /* SHOW MENU BUTTON */
 
-    .menu-btn{
+    .menu-btn {
 
-        display: flex;
+        display: flex !important;
 
         align-items: center;
         justify-content: center;
@@ -2047,7 +2047,7 @@ html, body {
 
     /* MOBILE DROPDOWN */
 
-    .mobile-menu{
+    .mobile-menu {
 
         position: fixed;
 
@@ -2072,13 +2072,13 @@ html, body {
 
     /* SHOW MENU */
 
-    .mobile-menu.show{
+    .mobile-menu.show {
         display: flex;
     }
 
     /* LINKS */
 
-    .mobile-menu a{
+    .mobile-menu a {
 
         padding: 14px;
 
@@ -2091,7 +2091,7 @@ html, body {
         font-size: 15px;
     }
 
-    .mobile-menu a:hover{
+    .mobile-menu a:hover {
         background: #f3f4f6;
     }
 }
