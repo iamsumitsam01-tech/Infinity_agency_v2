@@ -14,14 +14,47 @@
 <!-- ✅ NAVBAR -->
 <header class="navbar">
 
-    <div class="logo">Infinity</div>
+    <!-- LEFT -->
+    <div class="nav-left">
 
+        <div class="logo">
+            Infinity
+        </div>
+
+        <a href="{% url 'contact' %}" class="nav-btn">
+            Get Started
+        </a>
+
+    </div>
+
+    <!-- DESKTOP LINKS -->
     <nav class="nav-links">
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'service' %}">Services</a>
         <a href="{% url 'portfolio' %}">Portfolio</a>
         <a href="{% url 'contact' %}">Contact</a>
     </nav>
+
+    <!-- MOBILE MENU BUTTON -->
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="{% url 'home' %}">Home</a>
+
+    <a href="{% url 'service' %}">Services</a>
+
+    <a href="{% url 'portfolio' %}">Portfolio</a>
+
+    <a href="{% url 'contact' %}">Contact</a>
+
+</div>
 
 
 {% if user.is_authenticated %}
@@ -305,6 +338,30 @@ function toggleSound() {
 }
 </script>
 </script>
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("show");
+
+});
+
+/* CLOSE MENU WHEN CLICKING LINK */
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("show");
+
+    });
+
+});
+
+</script>
 
 <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
   💬
@@ -321,6 +378,9 @@ function toggleSound() {
 
   </div>
 </div>
+
+
+
 
 </body>
 </html>

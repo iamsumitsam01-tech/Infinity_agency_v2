@@ -2044,133 +2044,11 @@ html, body {
 
 }
 
-/* =========================================
-   FINAL MOBILE NAVBAR FIX
-========================================= */
 
-@media screen and (max-width: 768px) {
-
-  body {
-    padding-top: 85px !important;
-    overflow-x: hidden !important;
-  }
-
-  /* NAVBAR */
-
-  .navbar {
-
-    position: fixed !important;
-
-    top: 8px !important;
-    left: 50% !important;
-
-    transform: translateX(-50%) !important;
-
-    width: calc(100% - 16px) !important;
-    max-width: 100% !important;
-
-    padding: 14px 16px !important;
-
-    border-radius: 18px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-
-    background: rgba(255,255,255,0.92) !important;
-
-    backdrop-filter: blur(18px) !important;
-
-    z-index: 999999 !important;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
-  }
-
-  /* LOGO */
-
-  .logo {
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    color: #111 !important;
-  }
-
-  /* HIDE DESKTOP LINKS */
-
-  .nav-links {
-    display: none !important;
-  }
 
   /* MENU BUTTON */
 
-  .menu-btn {
-
-    display: flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 12px;
-
-    background: rgba(0,0,0,0.06);
-
-    font-size: 24px !important;
-
-    color: #111;
-
-    cursor: pointer;
-  }
-
-  /* MOBILE MENU */
-
-  .mobile-menu {
-
-    position: fixed !important;
-
-    top: 78px !important;
-    left: 8px !important;
-    right: 8px !important;
-
-    width: auto !important;
-
-    padding: 10px !important;
-
-    border-radius: 18px !important;
-
-    background: rgba(255,255,255,0.98) !important;
-
-    backdrop-filter: blur(20px);
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-
-    z-index: 999999 !important;
-  }
-
-  .mobile-menu a {
-
-    display: block;
-
-    width: 100%;
-
-    padding: 16px 18px !important;
-
-    border-radius: 12px;
-
-    font-size: 16px !important;
-    font-weight: 500;
-
-    color: #111 !important;
-
-    text-decoration: none;
-  }
-
-  .mobile-menu a:hover {
-    background: #f3f4f6;
-  }
-
-  /* BUTTON */
+  
 
   .nav-btn {
 
@@ -2185,6 +2063,163 @@ html, body {
     text-align: center !important;
 
     font-size: 15px !important;
+  }
+
+/* =========================================
+   MOBILE NAVBAR FINAL
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+  body{
+    padding-top: 95px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* NAVBAR */
+
+  .navbar{
+
+    position: fixed !important;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 20px);
+
+    padding: 14px 16px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.96);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* LEFT */
+
+  .nav-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* LOGO */
+
+  .logo{
+    font-size: 22px !important;
+    font-weight: 700;
+    color: #111;
+  }
+
+  /* GET STARTED */
+
+  .nav-btn{
+
+    margin: 0 !important;
+
+    padding: 10px 14px !important;
+
+    border-radius: 12px;
+
+    font-size: 13px !important;
+
+    font-weight: 600;
+
+    background: linear-gradient(135deg,#3b82f6,#6366f1);
+
+    color: white !important;
+  }
+
+  /* HIDE DESKTOP LINKS */
+
+  .nav-links{
+    display: none !important;
+  }
+
+  /* MENU BUTTON */
+
+  .menu-btn{
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.06);
+
+    color: #111;
+
+    font-size: 24px;
+
+    cursor: pointer;
+  }
+
+  /* MOBILE MENU */
+
+  .mobile-menu{
+
+    position: fixed;
+
+    top: 84px;
+    left: 10px;
+    right: 10px;
+
+    display: none;
+
+    flex-direction: column;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.98);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+    z-index: 999999;
+  }
+
+  .mobile-menu.show{
+    display: flex;
+  }
+
+  .mobile-menu a{
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+  }
+
+  .mobile-menu a:hover{
+    background: #f3f4f6;
   }
 
 }
