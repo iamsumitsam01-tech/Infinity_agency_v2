@@ -28,9 +28,9 @@ body {
 /* LINKS */
 
 .nav-links {
-    display: flex;
+  
     gap: 25px;
-    margin-left: auto;
+    align-items: center;
     
 }
 
@@ -68,10 +68,12 @@ body {
 }
 
 .hero p {
-  margin: 20px 0;
-  color: #555;
+    margin: 20px 0;
+    color: #1f2937;     /* Dark gray - readable */
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;   /* Prevent text stretching too wide */
 }
-
 
 
 .buttons {
@@ -323,7 +325,9 @@ body {
     padding-top: 100px;
 }
 section {
-  padding: 120px 100px;  /* BIG spacing */
+    padding: 80px 40px;     /* Comfortable, responsive */
+    max-width: 1400px;      /* Cap content width */
+    margin: 0 auto;         /* Center content */
 }
 
 h2 {
@@ -516,12 +520,15 @@ h2 {
 
 
 /* IMPACT SECTION */
+
+/* ✅ ADD */
 .impact {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 80px 40px;
 }
+
 .impact h2 {
   font-size: 32px;
   margin-bottom: 10px;
@@ -537,6 +544,8 @@ h2 {
   /* 3 columns on large screens, auto-fit on smaller */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .impact-item {
   background: rgba(255,255,255,0.1);
@@ -900,22 +909,14 @@ h2 {
  border-radius: 50%;
 }
 
-
-
 .hero {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0 80px;
+    padding: 120px 40px 80px;  /* Top padding for navbar + breathing room */
     background: #ffffff;
-    overflow: hidden;
-}
-
-
-.nav-links{
-  display: flex;
-  gap: 25px;
-  align-items: center;
+    overflow: hidden;          /* Traps circles inside */
+    min-height: 100vh;         /* Full viewport height */
 }
 
 .nav-btn, .buy-btn {
@@ -924,19 +925,15 @@ h2 {
 
 
 .navbar {
-    position: fixed;   /* 🔥 CHANGE THIS */
+    position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
-    z-index: 99999;    /* 🔥 VERY HIGH */
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    width: calc(100% - 160px);    /* 80px margin each side */
+    max-width: 1200px;
     padding: 12px 30px;
-    width: 90%;
+    border-radius: 16px;
+}
     max-width: 1200px;
 
     background: rgba(255, 255, 255, 0.6);
@@ -2225,4 +2222,70 @@ html, body {
     background: #f3f4f6;
   }
 
+}
+
+/* ✅ ADD THIS */
+.hero, .premium-feature, .feature-shapes {
+    position: relative;
+    overflow: hidden;    /* Traps absolute positioned circles */
+}
+
+.circle, .f-circle {
+    pointer-events: none;   /* Already have, good */
+    z-index: 0;             /* Keep behind content */
+}
+
+.hero-content, .glass-box {
+    position: relative;
+    z-index: 2;             /* Keep text above circles */
+}
+
+@media screen and (max-width: 768px) {
+    
+    .nav-links {
+        display: none !important;  /* Hide all desktop links */
+    }
+    
+    .menu-btn {
+        display: flex;  /* Show hamburger */
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(0,0,0,0.06);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    /* Mobile menu dropdown */
+    .mobile-menu {
+        display: none;  /* Hidden by default */
+        position: fixed;
+        top: 82px;
+        left: 10px;
+        right: 10px;
+        flex-direction: column;
+        background: white;
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        z-index: 999999;
+    }
+    
+    .mobile-menu.show {
+        display: flex;  /* Show when active */
+    }
+    
+    .mobile-menu a {
+        padding: 14px;
+        text-decoration: none;
+        color: #111;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+    
+    .mobile-menu a:hover {
+        background: #f3f4f6;
+    }
 }

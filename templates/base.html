@@ -13,52 +13,31 @@
 
 <!-- ✅ NAVBAR -->
 <header class="navbar">
-
-    <!-- LEFT -->
+    
+    <!-- LEFT: Logo only (Change 1: Removed Get Started from here) -->
     <div class="nav-left">
-
-        <div class="logo">
-            Infinity
-        </div>
-
-        <a href="{% url 'contact' %}" class="nav-btn">
-            Get Started
-        </a>
-
+        <div class="logo">Infinity</div>
     </div>
 
-    <!-- DESKTOP MENU -->
+    <!-- DESKTOP MENU: All links + Get Started (Change 2: Added Get Started here) -->
     <nav class="nav-links">
-
         <a href="{% url 'home' %}">Home</a>
-
         <a href="{% url 'service' %}">Services</a>
-
         <a href="{% url 'portfolio' %}">Portfolio</a>
-
         <a href="{% url 'contact' %}">Contact</a>
-
+        <a href="{% url 'contact' %}" class="nav-btn">Get Started</a>
     </nav>
 
-    <!-- MOBILE MENU BUTTON -->
-    <div class="menu-btn" id="menuBtn">
-        ☰
-    </div>
+    <!-- MOBILE: Only hamburger button -->
+    <div class="menu-btn" id="menuBtn">☰</div>
 
 </header>
 
-<!-- MOBILE DROPDOWN -->
-
+<!-- MOBILE DROPDOWN (Changes 3 & 4: Removed Home and Get Started) -->
 <div class="mobile-menu" id="mobileMenu">
-
-    <a href="{% url 'home' %}">Home</a>
-
     <a href="{% url 'service' %}">Services</a>
-
     <a href="{% url 'portfolio' %}">Portfolio</a>
-
     <a href="{% url 'contact' %}">Contact</a>
-
 </div>
 
 
@@ -345,13 +324,18 @@ function toggleSound() {
 </script>
 <script>
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+});
 
-  mobileMenu.classList.toggle("show");
-
+// Close menu when clicking a link
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+    });
 });
 
 </script>
