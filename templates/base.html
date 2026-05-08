@@ -19,10 +19,35 @@
     </div>
 
     <nav class="nav-links">
+
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'service' %}">Services</a>
         <a href="{% url 'portfolio' %}">Portfolio</a>
         <a href="{% url 'contact' %}">Contact</a>
+
+        {% if user.is_authenticated %}
+
+        <div class="user-dropdown">
+
+            <div class="user-box" id="profileBtn">
+                <span>{{ user.get_full_name|default:user.username }}</span>
+            </div>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/dashboard/">Dashboard</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <a href="{% provider_login_url 'google' %}" class="nav-btn">
+            Get Started
+        </a>
+
+        {% endif %}
+
     </nav>
 
     <div class="menu-btn" id="menuBtn">☰</div>
@@ -30,27 +55,18 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
+
     <a href="{% url 'home' %}">Home</a>
     <a href="{% url 'service' %}">Services</a>
     <a href="{% url 'portfolio' %}">Portfolio</a>
     <a href="{% url 'contact' %}">Contact</a>
-</div>
 
+    {% if not user.is_authenticated %}
+    <a href="{% provider_login_url 'google' %}" class="nav-btn">
+        Get Started
+    </a>
+    {% endif %}
 
-{% if user.is_authenticated %}
-
-<div class="user-dropdown">
-  <div class="user-box" id="profileBtn">
-
-
-    <span>{{ user.get_full_name|default:user.username }}</span>
-
-  </div>
-
-  <div class="dropdown-menu" id="dropdownMenu">
-    <a href="/dashboard/">Dashboard</a>
-    <a href="#" id="logoutBtn">Logout</a>
-  </div>
 </div>
 
 
@@ -304,7 +320,7 @@ function toggleSound() {
     }
 }
 </script>
-</script>
+
 <script>
 
 const menuBtn = document.getElementById('menuBtn');
