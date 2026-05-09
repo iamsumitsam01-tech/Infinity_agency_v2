@@ -2095,8 +2095,6 @@ html, body {
         background: #f3f4f6;
     }
 }
-
-
 /* Default (desktop) */
 .nav-links {
   display: flex;
@@ -2105,6 +2103,8 @@ html, body {
 
 .menu-btn {
   display: none; /* hide menu icon on desktop */
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* Mobile */
@@ -2115,8 +2115,10 @@ html, body {
 
   .menu-btn {
     display: block; /* show menu icon */
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
+    color: white; /* make sure it's visible */
+    z-index: 1000;
   }
 
   .mobile-menu {
@@ -2124,9 +2126,13 @@ html, body {
     flex-direction: column;
     background: #111827;
     padding: 20px;
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 0;
+    width: 100%;
   }
 
   .mobile-menu.show {
-    display: flex; /* toggle when clicked */
+    display: flex; /* toggled by JS */
   }
 }
