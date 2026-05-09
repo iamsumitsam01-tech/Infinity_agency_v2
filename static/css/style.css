@@ -1937,7 +1937,7 @@ html, body {
 
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 
-    z-index: 999999;
+    z-index: 1000;
 }
 
 /* LOGO */
@@ -1986,14 +1986,29 @@ html, body {
 }
 
 /* HIDE MOBILE ITEMS ON LAPTOP */
-
-.menu-btn{
-    display: none;
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
 }
 
-.mobile-menu{
-    display: none;
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #111827;
+  padding: 20px;
+  position: absolute;
+  top: 60px; /* below navbar */
+  right: 0;
+  width: 100%;
 }
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
 
 /* =========================================
    MOBILE
@@ -2026,7 +2041,7 @@ html, body {
 
     .menu-btn {
 
-        display: flex !important;
+        display: block !important;
 
         align-items: center;
         justify-content: center;
