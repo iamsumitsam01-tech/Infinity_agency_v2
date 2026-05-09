@@ -2008,11 +2008,7 @@ html, body {
   text-decoration: none;
   padding: 10px 0;
 }
-/* ================= MOBILE FIX ================= */
 
-.menu-btn{
-    display: none;
-}
 
 .mobile-menu{
     display: none;
@@ -2026,46 +2022,24 @@ html, body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 95% !important;
+        left: 50%;
+        transform: translateX(-50%);
+        
     }
 
-    .nav-links{
-        display: none !important;
-    }
+    
 
     .menu-btn{
         display: block !important;
-        font-size: 30px;
-        color: black;
+        color: black !important;
+        font-size: 30px !important;
         cursor: pointer;
         z-index: 99999;
     }
-
-    .mobile-menu{
-        position: fixed;
-        top: 90px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 92%;
-        background: #111827;
-        border-radius: 20px;
-        padding: 20px;
-        z-index: 9999;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .mobile-menu.show{
-        display: flex !important;
-    }
-
-    .mobile-menu a{
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-    }
-
-    .logo{
-        font-size: 24px;
-    }
+    .nav-links{
+        display: none !important;
+    }    
+    
 
 }
