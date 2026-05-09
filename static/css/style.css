@@ -1999,7 +1999,7 @@ html, body {
    MOBILE
 ========================================= */
 
-@media screen and (max-width:768px){
+@media screen and (max-width:430px){
 
     body{
         padding-top: 90px;
@@ -2094,4 +2094,39 @@ html, body {
     .mobile-menu a:hover {
         background: #f3f4f6;
     }
+}
+
+
+/* Default (desktop) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-btn {
+  display: none; /* hide menu icon on desktop */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide desktop links */
+  }
+
+  .menu-btn {
+    display: block; /* show menu icon */
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #111827;
+    padding: 20px;
+  }
+
+  .mobile-menu.show {
+    display: flex; /* toggle when clicked */
+  }
 }
