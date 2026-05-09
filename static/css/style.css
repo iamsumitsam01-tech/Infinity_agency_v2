@@ -2151,3 +2151,56 @@ html, body {
     display: flex; /* toggled by JS */
   }
 }
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .menu-btn {
+        display: block !important;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .navbar {
+        width: 92%;
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92%;
+        background: #111827;
+        border-radius: 18px;
+        padding: 20px;
+        z-index: 99999;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .mobile-menu.show {
+        display: flex !important;
+    }
+
+    .mobile-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
