@@ -887,10 +887,8 @@ h2 {
   display: none;
   position: fixed;
   inset: 0;
-
   backdrop-filter: blur(12px);
   background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(240,240,255,0.7));
-
   z-index: 999999;
   justify-content: center;
   align-items: center;
@@ -1984,17 +1982,7 @@ html, body {
 
     font-size: 14px;
 }
-
-/* HIDE MOBILE ITEMS ON LAPTOP */
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
 .mobile-menu {
-  display: none;
   flex-direction: column;
   background: #111827;
   padding: 20px;
@@ -2008,38 +1996,94 @@ html, body {
   text-decoration: none;
   padding: 10px 0;
 }
+/* =========================================
+FINAL MOBILE NAVBAR FIX
+========================================= */
 
+.menu-btn{
+    display: none;
+}
 
 .mobile-menu{
     display: none;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width:768px){
 
     .navbar{
-        width: 95%;
-        padding: 14px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95% !important;
+        position: fixed;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        
+
+        width: calc(100% - 20px);
+        padding: 14px 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(16px);
+
+        border-radius: 16px;
+
+        z-index: 999999;
     }
 
-    
-
-    .menu-btn{
-        display: block !important;
-        color: black !important;
-        font-size: 30px !important;
-        cursor: pointer;
-        z-index: 99999;
-    }
+    /* HIDE DESKTOP MENU */
     .nav-links{
         display: none !important;
-    }    
-    
+    }
+
+    /* SHOW HAMBURGER */
+    .menu-btn{
+        display: block !important;
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
+        z-index: 999999;
+    }
+
+    /* MOBILE DROPDOWN */
+    .mobile-menu{
+        position: fixed;
+        top: 85px;
+        left: 10px;
+        right: 10px;
+
+        background: white;
+
+        border-radius: 16px;
+
+        padding: 10px;
+
+        display: none;
+        flex-direction: column;
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+        z-index: 999999;
+    }
+
+    /* SHOW MENU */
+    .mobile-menu.show{
+        display: flex;
+    }
+
+    /* LINKS */
+    .mobile-menu a{
+        color: #111;
+        text-decoration: none;
+
+        padding: 14px;
+        border-radius: 10px;
+
+        font-size: 16px;
+    }
+
+    .mobile-menu a:hover{
+        background: #f3f4f6;
+    }
 
 }
