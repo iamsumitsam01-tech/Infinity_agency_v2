@@ -28,9 +28,9 @@
         <a href="{% url 'contact' %}">Contact</a>
 
         {% if not user.is_authenticated %}
-        <a href="{% provider_login_url 'google' %}" class="nav-btn">
-            Get Started
-        </a>
+        <a href="{% provider_login_url 'google' %}" class="nav-btn active-btn">
+    Get Started
+</a>
         {% endif %}
     </nav>
 

@@ -2071,3 +2071,21 @@ h2 {
     position: relative;
     z-index: 10;
 }
+
+/* ACTIVE GET STARTED BUTTON */
+
+.active-btn{
+    background: linear-gradient(135deg,#3b82f6,#7c3aed);
+    color: white !important;
+
+    box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+
+    border: none;
+
+    transition: 0.3s ease;
+}
+
+.active-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(59,130,246,0.5);
+}
