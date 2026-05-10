@@ -1929,11 +1929,7 @@ FINAL NAVBAR
     font-weight: bold;
 }
 
-.nav-links{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
+
 
 .nav-links a{
     text-decoration: none;
@@ -1976,11 +1972,26 @@ FINAL NAVBAR
 
         padding: 15px;
 
-        display: none;
+        
         flex-direction: column;
         align-items: flex-start;
 
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width:768px){
+
+    .nav-links{
+        display: none;
     }
 
     .nav-links.show{
