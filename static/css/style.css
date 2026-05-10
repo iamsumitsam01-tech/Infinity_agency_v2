@@ -1955,12 +1955,15 @@ html, body {
 /* MOBILE */
 @media(max-width:768px){
 
-    .hamburger{
-        display: block;
+     .hamburger{
+        display: block !important;
+        font-size: 32px;
+        color: black;
+        cursor: pointer;
+        z-index: 99999;
     }
-
     .nav-menu{
-        display: none;
+        display: none !important;
 
         position: absolute;
         top: 80px;
