@@ -12,10 +12,6 @@ body {
 
 }
 
-
-/* HERO */
-
-
 .hero h1 {
   font-size: 48px;
   line-height: 1.2;
@@ -861,10 +857,6 @@ h2 {
     background: #ffffff;
     overflow: hidden;          /* Traps circles inside */
     min-height: 100vh;         /* Full viewport height */
-}
-
-.nav-btn, .buy-btn {
-  cursor: pointer;
 }
 
 .hero {
@@ -1905,48 +1897,37 @@ html, body {
     position: relative;
     z-index: 2;             /* Keep text above circles */
 }
-
-/* =========================================
-   FINAL RESPONSIVE NAVBAR
-========================================= */
-
-/* DESKTOP */
+/* =========================
+FINAL NAVBAR
+========================= */
 
 .navbar{
     position: fixed;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
 
-    width: calc(100% - 160px);
+    width: 95%;
     max-width: 1200px;
 
-    padding: 14px 30px;
+    background: white;
+
+    padding: 15px 20px;
+
+    border-radius: 16px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(255,255,255,0.9);
-
-    backdrop-filter: blur(16px);
-
-    border-radius: 18px;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-
-    z-index: 1000;
+    z-index: 999999;
 }
-
-/* LOGO */
 
 .logo{
+    color: black;
     font-size: 22px;
-    font-weight: 700;
-    color: #111;
+    font-weight: bold;
 }
-
-/* DESKTOP MENU */
 
 .nav-links{
     display: flex;
@@ -1956,137 +1937,54 @@ html, body {
 
 .nav-links a{
     text-decoration: none;
-    color: #111;
-    font-size: 15px;
-    transition: 0.3s;
+    color: black;
 }
-
-.nav-links a:hover{
-    color: #3b82f6;
-}
-
-/* BUTTON */
 
 .nav-btn{
-    margin-left: 10px;
-
-    padding: 10px 18px;
-
-    background: linear-gradient(135deg,#3b82f6,#6366f1);
-
+    background: #2563eb;
     color: white !important;
-
+    padding: 10px 18px;
     border-radius: 10px;
-
-    text-decoration: none;
-
-    font-size: 14px;
 }
-.mobile-menu {
-  flex-direction: column;
-  background: #111827;
-  padding: 20px;
-  position: absolute;
-  top: 60px; /* below navbar */
-  right: 0;
-  width: 100%;
-}
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-}
-/* =========================================
-FINAL MOBILE NAVBAR FIX
-========================================= */
 
 .menu-btn{
     display: none;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
 }
 
-.mobile-menu{
-    display: none;
-}
+/* MOBILE */
 
 @media screen and (max-width:768px){
 
-    .navbar{
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        width: calc(100% - 20px);
-        padding: 14px 18px;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        background: rgba(255,255,255,0.95);
-        backdrop-filter: blur(16px);
-
-        border-radius: 16px;
-
-        z-index: 999999;
-    }
-
-    /* HIDE DESKTOP MENU */
-    .nav-links{
-        display: none !important;
-    }
-
-    /* SHOW HAMBURGER */
     .menu-btn{
-        display: block !important;
-        font-size: 30px;
-        color: black;
-        cursor: pointer;
-        z-index: 999999;
+        display: block;
     }
 
-    /* MOBILE DROPDOWN */
-    .mobile-menu{
-        position: fixed;
-        top: 85px;
-        left: 10px;
-        right: 10px;
+    .nav-links{
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
 
         background: white;
 
         border-radius: 16px;
 
-        padding: 10px;
+        padding: 15px;
 
         display: none;
         flex-direction: column;
+        align-items: flex-start;
 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-        z-index: 999999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    /* SHOW MENU */
-    .mobile-menu.show{
+    .nav-links.show{
         display: flex;
     }
 
-    /* LINKS */
-    .mobile-menu a{
-        color: #111;
-        text-decoration: none;
-
-        padding: 14px;
-        border-radius: 10px;
-
-        font-size: 16px;
-    }
-
-    .mobile-menu a:hover{
-        background: #f3f4f6;
-    }
-
-}
-.mobile-menu{
-    display: flex !important;
 }
