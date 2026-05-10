@@ -16,27 +16,6 @@
 
     <div class="logo">Infinity</div>
 
-    <div class="menu-btn" id="menuBtn">☰</div>
-
-    <nav class="nav-links" id="navLinks">
-
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'service' %}">Services</a>
-        <a href="{% url 'portfolio' %}">Portfolio</a>
-        <a href="{% url 'contact' %}">Contact</a>
-
-        {% if not user.is_authenticated %}
-        <a href="{% provider_login_url 'google' %}" class="nav-btn">
-            Get Started
-        </a>
-        {% endif %}
-
-    </nav>
-
-</header><header class="navbar">
-
-    <div class="logo">Infinity</div>
-
     <div class="hamburger" id="hamburger">
         ☰
     </div>
@@ -299,9 +278,15 @@ if (video) {
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
-hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
+if(hamburger && navMenu){
+
+    hamburger.addEventListener("click", () => {
+
+        navMenu.classList.toggle("active");
+
+    });
+
+}
 
 </script>
 
