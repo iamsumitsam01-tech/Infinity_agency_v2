@@ -12,50 +12,6 @@ body {
 
 }
 
-@media screen and (max-width:768px){
-
-    .nav-links{
-        display: none;
-    }
-
-    .nav-links.show{
-        display: flex;
-    }
-
-}
-
-@media screen and (max-width:768px){
-
-    .menu-btn{
-        display: block !important;
-        font-size: 30px;
-        color: black;
-        cursor: pointer;
-    }
-
-    .nav-links{
-      display: none !important;     
-        position: absolute;
-
-        top: 80px;
-        left: 0;
-
-        width: 100%;
-
-        background: white;
-
-        border-radius: 16px;
-
-        padding: 15px;
-
-        
-        flex-direction: column;
-        align-items: flex-start;
-
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-}
 
 .hero h1 {
   font-size: 48px;
@@ -1943,12 +1899,12 @@ html, body {
     z-index: 2;             /* Keep text above circles */
 }
 /* =========================
-FINAL NAVBAR
+NEW CLEAN NAVBAR
 ========================= */
 
 .navbar{
     position: fixed;
-    top: 10px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -1969,14 +1925,18 @@ FINAL NAVBAR
 }
 
 .logo{
-    color: black;
     font-size: 22px;
     font-weight: bold;
+    color: black;
 }
 
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
 
-
-.nav-links a{
+.nav-menu a{
     text-decoration: none;
     color: black;
 }
@@ -1988,7 +1948,7 @@ FINAL NAVBAR
     border-radius: 10px;
 }
 
-.menu-btn{
+.hamburger{
     display: none;
     font-size: 30px;
     color: black;
@@ -1997,8 +1957,34 @@ FINAL NAVBAR
 
 /* MOBILE */
 
-.nav-links{
-    display: flex;
-    align-items: center;
-    gap: 25px;
+@media screen and (max-width:768px){
+
+    .hamburger{
+        display: block;
+    }
+
+    .nav-menu{
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        border-radius: 16px;
+
+        padding: 15px;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active{
+        display: flex;
+    }
+
 }
