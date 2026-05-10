@@ -157,7 +157,6 @@
 <!-- ✅ SCRIPT -->
 <!-- ✅ FIXED MAIN SCRIPT -->
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -310,25 +309,18 @@ if (video) {
     observer.observe(video);
 }
 </script>
-
-<script>
-function toggleSound() {
-    const video = document.getElementById('autoVideo');
-    if (video) {
-        video.muted = !video.muted;
-        video.play();
-    }
-}
-</script>
-
 <script>
 
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
-});
+if(menuBtn && mobileMenu){
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+
+}
 
 </script>
 

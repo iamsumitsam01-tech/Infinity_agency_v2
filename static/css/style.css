@@ -2087,3 +2087,6 @@ FINAL MOBILE NAVBAR FIX
     }
 
 }
+.mobile-menu{
+    display: flex !important;
+}
