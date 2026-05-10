@@ -1955,10 +1955,14 @@ FINAL NAVBAR
 @media screen and (max-width:768px){
 
     .menu-btn{
-        display: block;
+        display: block !important;
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
     }
 
     .nav-links{
+      display: none !important;     
         position: absolute;
 
         top: 80px;
