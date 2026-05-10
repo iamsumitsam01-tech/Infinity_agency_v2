@@ -2089,3 +2089,202 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(59,130,246,0.5);
 }
+
+
+/* =========================================
+   MOBILE SERVICES SECTION FIX
+   ADD AT BOTTOM OF style.css
+========================================= */
+
+@media screen and (max-width: 768px){
+
+/* MAIN SERVICES SECTION */
+
+.services{
+    padding: 80px 18px !important;
+    overflow: hidden;
+}
+
+/* TITLE */
+
+.section-title{
+    font-size: 42px !important;
+    text-align: center !important;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* SUBTITLE */
+
+.section-subtitle{
+    font-size: 18px !important;
+    line-height: 1.7;
+    text-align: center !important;
+    max-width: 100%;
+    margin: 0 auto 40px;
+    padding: 0 10px;
+}
+
+/* SERVICES GRID */
+
+.services-grid{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    width: 100%;
+}
+
+/* SERVICE CARD */
+
+.service-card{
+    width: 100% !important;
+    max-width: 340px !important;
+    
+    margin: 0 auto !important;
+    padding: 35px 25px !important;
+
+    border-radius: 28px;
+    
+    text-align: center !important;
+
+    position: relative;
+    left: 0 !important;
+    right: 0 !important;
+
+    transform: none !important;
+}
+
+/* ICON */
+
+.service-card .icon{
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+/* CARD TITLE */
+
+.service-card h3{
+    font-size: 30px !important;
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+/* CARD PARAGRAPH */
+
+.service-card p{
+    font-size: 17px !important;
+    line-height: 1.7;
+    
+    text-align: center !important;
+
+    margin-bottom: 22px;
+}
+
+/* LIST */
+
+.service-card ul{
+    padding: 0;
+    margin: 0 auto 25px;
+    list-style: none;
+}
+
+.service-card ul li{
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* LEARN MORE BUTTON */
+
+.service-btn{
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+
+    width: 220px;
+    height: 58px;
+
+    margin: 10px auto 0 !important;
+
+    border-radius: 50px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-align: center;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* HIGHLIGHT STRIP */
+
+.services-highlight{
+    margin-top: 50px;
+    padding: 0 10px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+/* CTA SECTION */
+
+.services-cta{
+    margin-top: 60px !important;
+
+    text-align: center !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 15px;
+}
+
+/* READY TO GROW */
+
+.services-cta h3{
+    font-size: 38px !important;
+
+    line-height: 1.3;
+
+    text-align: center !important;
+
+    margin-bottom: 25px;
+}
+
+/* GET FREE STRATEGY BUTTON */
+
+.cta-btn{
+    width: 280px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    border-radius: 50px;
+
+    text-align: center;
+
+    position: relative;
+    left: 0;
+    transform: none !important;
+}
+
+/* REMOVE SIDE OVERFLOW */
+
+body{
+    overflow-x: hidden !important;
+}
+
+}
