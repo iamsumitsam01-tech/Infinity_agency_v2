@@ -1,3 +1,10 @@
+.popup{
+    z-index: 20;
+}
+
+.whatsapp-float{
+    z-index: 21;
+}
 *{
   margin: 0;
   padding: 0;
@@ -2043,4 +2050,24 @@ h2 {
         padding: 20px;
         border-radius: 12px;
     }
+}
+/* FIX BUTTON CLICK ISSUE */
+
+.circle,
+.f-circle,
+.shapes,
+.feature-shapes{
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+/* KEEP CONTENT ABOVE */
+
+.hero-content,
+.buttons,
+.contact-buttons,
+.popup,
+.popup-box{
+    position: relative;
+    z-index: 10;
 }
