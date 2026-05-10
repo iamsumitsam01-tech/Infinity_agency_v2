@@ -5,10 +5,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html{
+  font-size: 16px;
+}
 body {
   background:#0b0f1a;
   color: white;
-  
+  overflow-x: hidden;
   
 
 }
@@ -1106,7 +1109,7 @@ h2 {
 
 html, body {
   transform: none !important;
-  zoom: 1 !important;
+  
 }
 
 
@@ -1944,23 +1947,30 @@ html, body {
 
 @media screen and (max-width:768px){
 
+    .navbar{
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+
     .hamburger{
-        display: block;
+        display: block !important;
+        font-size: 30px;
+        color: black;
     }
 
     .nav-menu{
-        display: none;
+        display: none !important;
+    }
+
+    .nav-menu.active{
+        display: flex !important;
+        flex-direction: column;
         position: absolute;
-        top: 80px;
+        top: 75px;
         left: 0;
         width: 100%;
         background: white;
         padding: 20px;
-        border-radius: 16px;
-        flex-direction: column;
-    }
-
-    .nav-menu.active{
-        display: flex;
+        border-radius: 12px;
     }
 }
