@@ -12,6 +12,51 @@ body {
 
 }
 
+@media screen and (max-width:768px){
+
+    .nav-links{
+        display: none;
+    }
+
+    .nav-links.show{
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width:768px){
+
+    .menu-btn{
+        display: block !important;
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
+    }
+
+    .nav-links{
+      display: none !important;     
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        border-radius: 16px;
+
+        padding: 15px;
+
+        
+        flex-direction: column;
+        align-items: flex-start;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+}
+
 .hero h1 {
   font-size: 48px;
   line-height: 1.2;
@@ -1952,54 +1997,8 @@ FINAL NAVBAR
 
 /* MOBILE */
 
-@media screen and (max-width:768px){
-
-    .menu-btn{
-        display: block !important;
-        font-size: 30px;
-        color: black;
-        cursor: pointer;
-    }
-
-    .nav-links{
-      display: none !important;     
-        position: absolute;
-
-        top: 80px;
-        left: 0;
-
-        width: 100%;
-
-        background: white;
-
-        border-radius: 16px;
-
-        padding: 15px;
-
-        
-        flex-direction: column;
-        align-items: flex-start;
-
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-}
 .nav-links{
     display: flex;
     align-items: center;
     gap: 25px;
-}
-
-/* MOBILE */
-
-@media screen and (max-width:768px){
-
-    .nav-links{
-        display: none;
-    }
-
-    .nav-links.show{
-        display: flex;
-    }
-
 }
