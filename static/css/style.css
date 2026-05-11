@@ -1979,105 +1979,162 @@ h2 {
     position: relative;
     z-index: 2;             /* Keep text above circles */
 }
-/* FINAL NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+
     width: 95%;
-    background: white;
-    padding: 15px 20px;
-    border-radius: 16px;
+    padding: 16px 24px;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+
+    border-radius: 18px;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     z-index: 9999;
 }
 
+/* LOGO */
+
 .logo{
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 700;
     color: black;
 }
 
-.nav-menu{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
+/* RIGHT SIDE */
 
 .nav-right{
-    display:flex;
-    align-items:center;
-    gap:15px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* MENU */
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 22px;
 }
 
 .nav-menu a{
     text-decoration: none;
     color: black;
-    font-weight:500;
+    font-weight: 500;
+    transition: 0.3s;
 }
+
+.nav-menu a:hover{
+    color: #5865ff;
+}
+
+/* GET STARTED BUTTON */
+
+.active-btn{
+    padding: 12px 24px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+    135deg,
+    #60a5fa,
+    #7c3aed,
+    #ec4899);
+
+    color: white !important;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    border: none;
+
+    box-shadow:
+    0 8px 25px rgba(88,101,255,.35);
+
+    transition: 0.3s ease;
+}
+
+.active-btn:hover{
+    transform: translateY(-2px);
+}
+
+/* HAMBURGER */
 
 .hamburger{
     display: none;
-    font-size: 32px;
-    color: black;
+    font-size: 34px;
     cursor: pointer;
+    color: black;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width:768px){
 
     .navbar{
         width: calc(100% - 20px);
-        padding: 15px;
-        display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 25px;
-    background:#fff;
-    border-radius:20px;
-    position:relative;
+        padding: 16px 20px;
     }
 
-    .hamburger{
-        display: block !important;
-        font-size: 30px;
-        color: black;
-    }
+    /* HIDE DESKTOP MENU */
 
     .nav-menu{
-        position:absolute;
-        top:95px;
-        right:20px;
-        width:220px;
-        background:#fff;
-        border-radius:15px;
-        padding:20px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:18px;
-        display:none;
-        box-shadow:0 10px 30px rgba(0,0,0,0.1);
-        z-index:999;
+        position: absolute;
+
+        top: 85px;
+        right: 0;
+
+        width: 240px;
+
+        background: white;
+
+        border-radius: 20px;
+
+        padding: 25px;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+
+        box-shadow:
+        0 15px 40px rgba(0,0,0,0.12);
     }
 
+    /* OPEN MENU */
+
     .nav-menu.active{
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        border-radius: 12px;
+        display: flex;
+    }
+
+    /* SHOW HAMBURGER */
+
+    .hamburger{
+        display: block;
+    }
+
+    /* KEEP GET STARTED OUTSIDE */
+
+    .desktop-btn{
+        display: block;
     }
 }
-/* FIX BUTTON CLICK ISSUE */
 
 .circle,
 .f-circle,

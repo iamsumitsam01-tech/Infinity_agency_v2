@@ -17,28 +17,28 @@
 
     <div class="logo">Infinity</div>
 
-    <!-- RIGHT SIDE -->
     <div class="nav-right">
 
-        {% if not user.is_authenticated %}
-        <a href="{% provider_login_url 'google' %}" 
-           class="nav-btn active-btn desktop-btn">
+        <!-- GET STARTED OUTSIDE -->
+        <a href="#" class="active-btn desktop-btn">
             Get Started
         </a>
-        {% endif %}
 
+        <!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             ☰
         </div>
 
     </div>
 
-    <!-- MENU -->
+    <!-- MOBILE MENU -->
     <nav class="nav-menu" id="navMenu">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'service' %}">Services</a>
-        <a href="{% url 'portfolio' %}">Portfolio</a>
-        <a href="{% url 'contact' %}">Contact</a>
+
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+
     </nav>
 
 </header>
@@ -282,16 +282,14 @@ if (video) {
 }
 </script>
 <script>
+
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
-if(hamburger && navMenu){
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
 
-    hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-    });
-
-}
 </script>
 
 <a href="https://wa.me/919784117930" class="whatsapp-float" target="_blank">
