@@ -2019,6 +2019,7 @@ h2 {
 .nav-menu a{
     text-decoration: none;
     color: black;
+    font-weight:500;
 }
 
 .hamburger{
@@ -2033,6 +2034,13 @@ h2 {
     .navbar{
         width: calc(100% - 20px);
         padding: 15px;
+        display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:#fff;
+    border-radius:20px;
+    position:relative;
     }
 
     .hamburger{
@@ -2042,7 +2050,19 @@ h2 {
     }
 
     .nav-menu{
-        display: none !important;
+        position:absolute;
+        top:95px;
+        right:20px;
+        width:220px;
+        background:#fff;
+        border-radius:15px;
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+        display:none;
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+        z-index:999;
     }
 
     .nav-menu.active{
@@ -2293,82 +2313,4 @@ body{
     overflow-x: hidden !important;
 }
 
-}
-
-/* NAVBAR */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 25px;
-    background:#fff;
-    border-radius:20px;
-    position:relative;
-}
-
-/* RIGHT SIDE */
-.nav-right{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-/* MENU */
-.nav-menu{
-    display:flex;
-    align-items:center;
-    gap:30px;
-}
-
-.nav-menu a{
-    text-decoration:none;
-    color:#000;
-    font-weight:500;
-}
-
-/* BUTTON */
-.nav-btn{
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:8px;
-}
-
-.active-btn{
-    background:linear-gradient(90deg,#4f7cff,#6b5cff);
-    color:white !important;
-}
-
-/* HAMBURGER */
-.hamburger{
-    font-size:34px;
-    cursor:pointer;
-    display:none;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-    .hamburger{
-        display:block;
-    }
-
-    .nav-menu{
-        position:absolute;
-        top:95px;
-        right:20px;
-        width:220px;
-        background:#fff;
-        border-radius:15px;
-        padding:20px;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:18px;
-        display:none;
-        box-shadow:0 10px 30px rgba(0,0,0,0.1);
-        z-index:999;
-    }
-
-    .nav-menu.active{
-        display:flex;
-    }
 }
