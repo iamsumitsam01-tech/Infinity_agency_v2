@@ -2371,3 +2371,72 @@ body{
 }
 
 }
+
+/* SERVICE PAGE */
+.service-page{
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    background: #0b0f1a;
+
+    z-index: 99999;
+
+    overflow-y: auto;
+
+    display: none;
+}
+
+/* SHOW */
+.service-page.active{
+    display: block;
+}
+
+/* NAVBAR */
+.service-navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:32px;
+
+    cursor:pointer;
+}
+
+/* CONTENT */
+.service-content{
+
+    padding:100px 20px;
+
+    color:white;
+}

@@ -152,7 +152,9 @@ data-driven advertising, and powerful digital strategies.
           <li>✔ Fast Loading Speed</li>
         </ul>
 
-        <a href="#" class="service-btn">Learn More</a>
+        <a onclick="openWebPage()" class="service-btn">
+   Learn More
+    </a>
       </div>
 
       <!-- Service 2 -->
@@ -167,7 +169,9 @@ data-driven advertising, and powerful digital strategies.
           <li>✔ ROI Optimization</li>
         </ul>
 
-        <a href="#" class="service-btn">Learn More</a>
+        <a onclick="openMetaPage()" class="service-btn">
+   Learn More
+</a>
       </div>
 
       <!-- Service 3 -->
@@ -182,7 +186,9 @@ data-driven advertising, and powerful digital strategies.
           <li>✔ Keyword Strategy</li>
         </ul>
 
-        <a href="#" class="service-btn">Learn More</a>
+        <a onclick="openSeoPage()" class="service-btn">
+   Learn More
+   </a>
       </div>
 
       <!-- Service 4 -->
@@ -616,7 +622,129 @@ data-driven advertising, and powerful digital strategies.
 </section>
 {% endblock %}
 
+<!-- WEBSITE DEVELOPMENT PAGE -->
+<div id="webPage" class="service-page">
 
+    <nav class="service-navbar">
+
+        <h2>Infinity</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Website Development</h1>
+
+        <p>
+            We create modern high-converting websites
+            for businesses and brands.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- META ADS PAGE -->
+<div id="metaPage" class="service-page">
+
+    <nav class="service-navbar">
+
+        <h2>Infinity</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Meta Ads Marketing</h1>
+
+        <p>
+            We run high-converting Meta Ads campaigns
+            for businesses.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- SEO PAGE -->
+<div id="seoPage" class="service-page">
+
+    <nav class="service-navbar">
+
+        <h2>Infinity</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>SEO Optimization</h1>
+
+        <p>
+            We help businesses rank higher on Google.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+function openWebPage(){
+
+    document.getElementById("webPage")
+    .classList.add("active");
+
+}
+
+
+function openMetaPage(){
+
+    document.getElementById("metaPage")
+    .classList.add("active");
+
+}
+
+
+function openSeoPage(){
+
+    document.getElementById("seoPage")
+    .classList.add("active");
+
+}
+
+
+function closePages(){
+
+    document.getElementById("webPage")
+    .classList.remove("active");
+
+    document.getElementById("metaPage")
+    .classList.remove("active");
+
+    document.getElementById("seoPage")
+    .classList.remove("active");
+
+}
+
+</script>
 
 
 
