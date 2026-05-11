@@ -17,21 +17,28 @@
 
     <div class="logo">Infinity</div>
 
-    <div class="hamburger" id="hamburger">
-        ☰
+    <!-- RIGHT SIDE -->
+    <div class="nav-right">
+
+        {% if not user.is_authenticated %}
+        <a href="{% provider_login_url 'google' %}" 
+           class="nav-btn active-btn desktop-btn">
+            Get Started
+        </a>
+        {% endif %}
+
+        <div class="hamburger" id="hamburger">
+            ☰
+        </div>
+
     </div>
 
+    <!-- MENU -->
     <nav class="nav-menu" id="navMenu">
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'service' %}">Services</a>
         <a href="{% url 'portfolio' %}">Portfolio</a>
         <a href="{% url 'contact' %}">Contact</a>
-
-        {% if not user.is_authenticated %}
-        <a href="{% provider_login_url 'google' %}" class="nav-btn active-btn">
-    Get Started
-</a>
-        {% endif %}
     </nav>
 
 </header>
