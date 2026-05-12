@@ -203,7 +203,9 @@ data-driven advertising, and powerful digital strategies.
           <li>✔ Scaling Plan</li>
         </ul>
 
-        <a href="#" class="service-btn">Learn More</a>
+        <a onclick="openGrowthPage()" class="service-btn">
+          Learn More
+   </a>
       </div>
 
       <!-- Service 5 -->
@@ -218,7 +220,9 @@ data-driven advertising, and powerful digital strategies.
           <li>✔ Smart Analytics</li>
         </ul>
 
-        <a href="#" class="service-btn">Learn More</a>
+        <a onclick="openAiPage()" class="service-btn">
+   Learn More
+   </a>
       </div>
 
       <!-- Service 6 -->
@@ -233,7 +237,9 @@ data-driven advertising, and powerful digital strategies.
     <li>✔ SEO Training</li>
   </ul>
 
-  <a href="#" class="service-btn">Learn More</a>
+  <a onclick="openCoursesPage()" class="service-btn">
+   Learn More
+   </a>
 </div>
 
 <!-- Service 7 -->
@@ -248,7 +254,9 @@ data-driven advertising, and powerful digital strategies.
     <li>✔ Secure Hosting</li>
   </ul>
 
-  <a href="#" class="service-btn">Learn More</a>
+  <a onclick="openSecurityPage()" class="service-btn">
+   Learn More
+   </a>
 </div>
 
 <!-- Service 8 -->
@@ -263,7 +271,9 @@ data-driven advertising, and powerful digital strategies.
     <li>✔ Mobile Optimization</li>
   </ul>
 
-  <a href="#" class="service-btn">Learn More</a>
+  <a onclick="openPerformancePage()" class="service-btn">
+   Learn More
+   </a>
 </div>
 
     </div>
@@ -704,48 +714,143 @@ data-driven advertising, and powerful digital strategies.
 
 </div>
 
+<!-- GROWTH PAGE -->
+<div id="growthPage" class="service-page">
+
+    <nav class="service-navbar">
+
+        <h2>Growth Strategy</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Growth Strategy</h1>
+
+        <p>
+            We create scalable growth systems designed
+            for long-term business success.
+        </p>
+
+    </div>
+
+</div>
 
 
-<script>
 
-function openWebPage(){
+<!-- AI PAGE -->
+<div id="aiPage" class="service-page">
 
-    document.getElementById("webPage")
-    .classList.add("active");
+    <nav class="service-navbar">
 
-}
+        <h2>AI Automation</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>AI Automation</h1>
+
+        <p>
+            Smart AI systems designed to automate
+            workflows and improve efficiency.
+        </p>
+
+    </div>
+
+</div>
 
 
-function openMetaPage(){
 
-    document.getElementById("metaPage")
-    .classList.add("active");
+<!-- COURSES PAGE -->
+<div id="coursesPage" class="service-page">
 
-}
+    <nav class="service-navbar">
+
+        <h2>Our Courses</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Our Courses</h1>
+
+        <p>
+            Learn modern digital skills with practical
+            real-world strategies.
+        </p>
+
+    </div>
+
+</div>
 
 
-function openSeoPage(){
 
-    document.getElementById("seoPage")
-    .classList.add("active");
+<!-- SECURITY PAGE -->
+<div id="securityPage" class="service-page">
 
-}
+    <nav class="service-navbar">
+
+        <h2>Security</h2>
+
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
+
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Security</h1>
+
+        <p>
+            Protect your business with secure
+            modern digital systems.
+        </p>
+
+    </div>
+
+</div>
 
 
-function closePages(){
 
-    document.getElementById("webPage")
-    .classList.remove("active");
+<!-- PERFORMANCE PAGE -->
+<div id="performancePage" class="service-page">
 
-    document.getElementById("metaPage")
-    .classList.remove("active");
+    <nav class="service-navbar">
 
-    document.getElementById("seoPage")
-    .classList.remove("active");
+        <h2>Performance Optimization</h2>
 
-}
+        <button onclick="closePages()" class="close-btn">
+            ✕
+        </button>
 
-</script>
+    </nav>
+
+    <div class="service-content">
+
+        <h1>Performance Optimization</h1>
+
+        <p>
+            Improve website speed and user experience
+            with optimized systems.
+        </p>
+
+    </div>
+
+</div>
 
 {% endblock %}
 
