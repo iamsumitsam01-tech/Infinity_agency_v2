@@ -1208,6 +1208,7 @@ h2 {
 
 /* ===== GLASS SERVICE CARD ===== */
 .service-card {
+  color: #111;
   position: relative;
   padding: 30px;
   border-radius: 20px;
@@ -1289,6 +1290,7 @@ h2 {
 }
 
 .service-card ul li {
+  color:#111;
   font-size: 14px;
   margin-bottom: 5px;
 }
@@ -2256,7 +2258,7 @@ h2 {
 /* CARD PARAGRAPH */
 
 .service-card p{
-    font-size: 17px !important;
+  color: #444;
     line-height: 1.7;
     
     text-align: center !important;
@@ -2374,69 +2376,50 @@ body{
 
 /* SERVICE PAGE */
 .service-page{
-
     position: fixed;
-
-    inset: 0;
-
+    top: 0;
+    left: 0;
     width: 100%;
-
     height: 100vh;
-
     background: #0b0f1a;
-
-    z-index: 99999;
-
-    overflow-y: auto;
-
+    z-index: 999999;
     display: none;
+    overflow-y: auto;
+    padding: 100px 20px;
 }
 
-/* SHOW */
 .service-page.active{
     display: block;
 }
 
-/* NAVBAR */
 .service-navbar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:20px;
-
-    background:rgba(255,255,255,0.05);
-
-    backdrop-filter:blur(10px);
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999;
 }
 
-/* CLOSE BUTTON */
 .close-btn{
-
-    background:none;
-
-    border:none;
-
-    color:white;
-
-    font-size:32px;
-
-    cursor:pointer;
+    border: none;
+    background: red;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* CONTENT */
 .service-content{
-
-    padding:100px 20px;
-
-    color:white;
+    max-width: 1000px;
+    margin: auto;
+    color: white;
+    padding-top: 100px;
 }
