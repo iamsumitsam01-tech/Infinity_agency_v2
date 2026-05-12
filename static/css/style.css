@@ -2433,17 +2433,12 @@ body{
 
     margin: 80px auto;
 
-    height: 220px;
+    height: 120px;
 
     border-radius: 30px;
 
     overflow: hidden;
-
-    background:
-    radial-gradient(circle at top,
-    #101a35 0%,
-    #070b18 45%,
-    #020308 100%);
+background: transparent;
 
     display: flex;
 
@@ -2457,30 +2452,20 @@ body{
 
 /* GLOW */
 
-.banner-glow{
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    background:
-    radial-gradient(circle,
-    rgba(108,255,239,.15) 0%,
-    rgba(114,190,255,.14) 25%,
-    rgba(184,122,255,.14) 50%,
-    rgba(255,132,212,.12) 70%,
-    transparent 80%);
-
-    filter: blur(60px);
-
-    animation: bannerPulse 8s ease-in-out infinite;
-}
 
 /* CONTENT */
 
 .banner-content{
 
+
+  
+   background: rgba(10,10,18,0.95);
+
+  padding: 18px 32px;
+
+  border-radius: 24px;
+
+  box-shadow:0 0 25px rgba(114,190,255,.15),0 0 40px rgba(184,122,255,.12);
     position: relative;
 
     z-index: 2;
@@ -2489,7 +2474,16 @@ body{
 
     align-items: center;
 
-    gap: 30px;
+    gap: 24px;
+    background: rgba(10,10,18,0.95);
+
+padding: 18px 32px;
+
+border-radius: 24px;
+
+box-shadow:
+0 0 25px rgba(114,190,255,.15),
+0 0 40px rgba(184,122,255,.12);
 }
 
 /* MINI LOGO */
@@ -2498,9 +2492,9 @@ body{
 
     position: relative;
 
-    width: 180px;
+    width: 130px;
 
-    height: 90px;
+    height: 65px;
 }
 
 .mini-infinity svg{
@@ -2522,9 +2516,7 @@ body{
     stroke-dasharray:1300;
     stroke-dashoffset:1300;
 
-    animation:
-    bannerDraw 3s ease forwards,
-    bannerGlow 12s linear infinite;
+    
 
     filter:
     drop-shadow(0 0 10px rgba(114,190,255,.9))
@@ -2563,7 +2555,7 @@ body{
 
 .banner-text h2{
 
-    font-size: 42px;
+    font-size: 38px;
 
     font-weight: 700;
 
@@ -2587,7 +2579,7 @@ body{
 
     color: rgba(255,255,255,.75);
 
-    font-size: 15px;
+    font-size: 13px;
 
     letter-spacing: 3px;
 }
@@ -2687,9 +2679,9 @@ body{
 
     .infinity-banner{
 
-        height: 180px;
+        height: auto;
 
-        padding: 20px;
+        padding: 10px;
     }
 
     .banner-content{
