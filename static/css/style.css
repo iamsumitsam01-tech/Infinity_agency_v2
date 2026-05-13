@@ -2393,7 +2393,7 @@ body{
 }
 
 .service-navbar{
-  min-height: 80px;
+  
     position: fixed;
     top: 20px;
     left: 50%;
