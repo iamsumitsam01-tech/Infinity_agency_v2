@@ -2410,12 +2410,7 @@ body{
 }
 
 .close-btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
-  flex-shrink: 0;
+  
     border: none;
     background: red;
     color: white;
@@ -2717,72 +2712,4 @@ box-shadow:
 
         text-align:center;
     }
-}
-.service-btn{
-  cursor: pointer;
-  border: none;
-  outline: none;
-  z-index: 9999;
-  pointer-events: auto;
-}
-@media(max-width:768px){
-
-.service-page{
-    padding:130px 20px 50px;
-}
-
-.service-navbar{
-    top:15px;
-    padding:18px;
-    border-radius:22px;
-}
-
-.service-content h1{
-    font-size:52px;
-    line-height:1.1;
-}
-
-.service-content p{
-    font-size:18px;
-    line-height:1.7;
-}
-
-}
-.services,
-.services-grid,
-.service-card{
-    position: relative;
-    z-index: 50;
-}
-.service-btn{
-    position: relative;
-    z-index: 999;
-}
-.infinity-banner{
-    z-index: 1;
-}
-
-.services{
-    position: relative;
-    z-index: 100;
-}
-.services{
-    position: relative;
-    z-index: 100;
-}
-
-.services-grid{
-    position: relative;
-    z-index: 100;
-}
-
-.service-card{
-    position: relative;
-    z-index: 100;
-}
-
-.service-btn{
-    position: relative;
-    z-index: 9999;
-    pointer-events: auto;
 }
