@@ -2710,3 +2710,10 @@ box-shadow:
         text-align:center;
     }
 }
+.service-btn{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 9999;
+  pointer-events: auto;
+}
