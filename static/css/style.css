@@ -2794,6 +2794,34 @@ width:42%;
 margin-top:-70px;
 }
 
+
+
+.hero-video-box video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-container{
+position:relative;
+z-index:2;
+}
+
+.hero-video-box{
+position:relative;
+z-index:50;
+}
+
+.shapes{
+z-index:1;
+pointer-events:none;
+}
+
+.circle{
+position:absolute;
+z-index:1;
+}
+
 .hero-video-box{
 width:52%;
 height:320px;
@@ -2801,10 +2829,16 @@ border-radius:30px;
 overflow:hidden;
 background:black;
 box-shadow:0 20px 50px rgba(0,0,0,.15);
+position:relative;
+z-index:50;
 }
 
-.hero-video-box video{
-width:100%;
-height:100%;
-object-fit:cover;
+@media(max-width:768px){
+
+.hero-video-box{
+width:85%;
+height:220px;
+margin:30px auto;
+}
+
 }
