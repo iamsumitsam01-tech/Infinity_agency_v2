@@ -2758,20 +2758,21 @@ opacity:1;
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
-
-    font-size:32px;
-    font-weight:700;
-    color:#111;
+    gap:14px;
 }
 
 .logo img{
-    width:42px;
-    height:42px;
+    width:70px;
+    height:70px;
 
     object-fit:contain;
 
-    transition:.3s ease;
+    transform:scale(1.15);
+}
+
+.logo span{
+    font-size:32px;
+    font-weight:700;
 }
 
 .logo img:hover{
