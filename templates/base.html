@@ -381,6 +381,56 @@ hamburger.addEventListener("click", () => {
 
 </script>
 
+<script>
+
+const images=[
+
+"{% static 'img/img/ad1.png' %}",
+"{% static 'img/img/ad2.png' %}",
+"{% static 'img/img/ad3.png' %}",
+"{% static 'img/img/ad4.png' %}",
+"{% static 'img/img/ad5.png' %}",
+"{% static 'img/img/ad6.png' %}",
+"{% static 'img/img/ad7.png' %}",
+"{% static 'img/img/ad8.png' %}",
+"{% static 'img/img/ad9.png' %}",
+"{% static 'img/img/ad10.png' %}"
+
+];
+
+
+function randomImage(sliderId){
+
+let img=document.getElementById(sliderId);
+
+let random=
+images[Math.floor(Math.random()*images.length)];
+
+img.style.animation='none';
+
+setTimeout(()=>{
+
+img.src=random;
+
+img.style.animation='slideMove 1s ease';
+
+},100);
+
+}
+
+
+setInterval(()=>{
+
+randomImage("slider1");
+
+randomImage("slider2");
+
+randomImage("slider3");
+
+},3000);
+
+</script>
+
 <a href="https://wa.me/919784117930" class="whatsapp-float" target="_blank">
   💬
 </a>
