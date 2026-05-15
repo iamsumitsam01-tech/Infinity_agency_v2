@@ -2758,23 +2758,26 @@ opacity:1;
 .logo{
     display:flex;
     align-items:center;
-    gap:14px;
+
+    gap:6px;   /* reduced from 14px */
+
+    line-height:1;
 }
 
 .logo img{
-    width:70px;
-    height:70px;
+    width:52px;      /* reduced from 70px */
+    height:52px;
 
     object-fit:contain;
 
-    transform:scale(1.15);
+    transform:scale(1.05);
+
+    margin-top:-2px;
 }
 
 .logo span{
     font-size:32px;
     font-weight:700;
-}
 
-.logo img:hover{
-    transform:scale(1.08);
+    margin-left:-2px;
 }
