@@ -12,6 +12,20 @@
 </head>
 
 <body class="{% if user.is_authenticated %}logged-in{% endif %}">
+  <!-- PREMIUM LOADER -->
+<div id="preloader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            Infinity
+        </div>
+
+        <div class="loader-line"></div>
+
+    </div>
+
+</div>
 
 <!-- ✅ NAVBAR -->
 <header class="navbar">
@@ -465,6 +479,21 @@ magneticButtons.forEach(btn => {
     });
 
 });
+</script>
+<script>
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("preloader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+    }, 1800);
+
+});
+
 </script>
 
 <a href="https://wa.me/919784117930" class="whatsapp-float" target="_blank">
