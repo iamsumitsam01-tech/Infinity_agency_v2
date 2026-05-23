@@ -53,7 +53,7 @@ def contact(request):
         # ✅ SUCCESS MESSAGE
         messages.success(request, "Message sent successfully!")
 
-        return redirect('contact')   # ✅ important
+        return redirect('/contact/')   # ✅ important
 
     return render(request, 'contact.html')
 
