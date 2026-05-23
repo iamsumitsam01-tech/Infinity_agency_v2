@@ -20,9 +20,11 @@
 
     <div class="loader-wrapper">
 
-        <img src="{% static 'img/img/load.mp4' %}"
-             alt="Bharat Logo"
-             class="cinema-logo">
+        <video autoplay muted playsinline id="intro-video">
+
+    <source src="{% static 'video/load.mp4' %}" type="video/mp4">
+
+</video>
 
         <h1 class="cinema-text">
             BHARAT INFINITY
