@@ -12,16 +12,21 @@
 </head>
 
 <body class="{% if user.is_authenticated %}logged-in{% endif %}">
-  <!-- PREMIUM LOADER -->
+<!-- CINEMATIC PRELOADER -->
+
 <div id="preloader">
 
-    <div class="loader-content">
+    <div class="cinema-bg"></div>
 
-        <div class="loader-logo">
-            Infinity
-        </div>
+    <div class="loader-wrapper">
 
-        <div class="loader-line"></div>
+        <img src="{% static 'img/img/bharat.png' %}"
+             alt="Bharat Logo"
+             class="cinema-logo">
+
+        <h1 class="cinema-text">
+            BHARAT INFINITY
+        </h1>
 
     </div>
 
@@ -490,7 +495,7 @@ window.addEventListener("load", () => {
 
         loader.classList.add("hide");
 
-    }, 1800);
+    }, 3200);
 
 });
 

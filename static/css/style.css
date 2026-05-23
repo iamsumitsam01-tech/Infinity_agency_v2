@@ -2938,132 +2938,186 @@ font-weight:800;
 .magnetic-btn:hover::before{
     transform: scale(1);
 }
-/* =========================
-   PREMIUM PRELOADER
-========================= */
+/* ===================================
+   CINEMATIC PRELOADER
+=================================== */
 
 #preloader{
+
     position: fixed;
     inset: 0;
+
     width: 100%;
     height: 100vh;
 
-    background: #050816;
+    background: #030712;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    z-index: 999999;
-
     overflow: hidden;
 
-    transition: opacity 0.8s ease,
-                visibility 0.8s ease;
+    z-index: 999999;
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
 }
 
-/* HIDE LOADER */
+/* HIDE */
 
 #preloader.hide{
+
     opacity: 0;
     visibility: hidden;
 }
 
-/* CONTENT */
+/* BACKGROUND GLOW */
 
-.loader-content{
+.cinema-bg{
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(0,212,255,0.18),
+        transparent 70%
+    );
+
+    filter: blur(80px);
+
+    animation:
+    pulseGlow 4s ease-in-out infinite;
+}
+
+/* WRAPPER */
+
+.loader-wrapper{
+
+    position: relative;
+
+    z-index: 2;
+
     text-align: center;
+
+    animation:
+    revealUp 2s ease forwards;
 }
 
 /* LOGO */
 
-.loader-logo{
+.cinema-logo{
 
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    width: 240px;
 
-    background: linear-gradient(
-        90deg,
-        #00d4ff,
-        #6c63ff,
-        #00d4ff
-    );
+    opacity: 0;
 
-    background-size: 200%;
+    transform:
+    scale(0.7)
+    rotate(-8deg);
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    filter:
+    blur(15px);
 
     animation:
-        gradientMove 3s linear infinite,
-        logoFloat 2s ease-in-out infinite;
+    logoReveal 2s ease forwards;
 }
 
-/* LINE */
+/* TEXT */
 
-.loader-line{
+.cinema-text{
 
-    width: 180px;
-    height: 4px;
+    margin-top: 20px;
 
-    margin: 20px auto 0;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 10px;
 
-    border-radius: 999px;
+    color: white;
 
-    background: linear-gradient(
-        90deg,
-        #00d4ff,
-        #6c63ff
-    );
+    opacity: 0;
 
-    position: relative;
+    transform:
+    translateY(30px);
 
-    overflow: hidden;
-}
+    animation:
+    textReveal 1.5s ease forwards;
 
-/* MOVING GLOW */
+    animation-delay: 1s;
 
-.loader-line::before{
-
-    content: "";
-
-    position: absolute;
-
-    left: -40%;
-
-    top: 0;
-
-    width: 40%;
-
-    height: 100%;
-
-    background: rgba(255,255,255,0.8);
-
-    filter: blur(8px);
-
-    animation: lineMove 1.5s linear infinite;
+    text-shadow:
+    0 0 20px rgba(0,212,255,0.5);
 }
 
 /* ANIMATIONS */
 
-@keyframes lineMove{
+@keyframes logoReveal{
+
+    0%{
+
+        opacity: 0;
+
+        transform:
+        scale(0.7)
+        rotate(-8deg);
+
+        filter:
+        blur(15px);
+    }
 
     100%{
-        left: 120%;
+
+        opacity: 1;
+
+        transform:
+        scale(1)
+        rotate(0deg);
+
+        filter:
+        blur(0px);
+
     }
 }
 
-@keyframes gradientMove{
+@keyframes textReveal{
 
-    100%{
-        background-position: 200%;
+    to{
+
+        opacity: 1;
+
+        transform:
+        translateY(0);
     }
 }
 
-@keyframes logoFloat{
+@keyframes revealUp{
+
+    from{
+
+        transform:
+        translateY(40px);
+    }
+
+    to{
+
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes pulseGlow{
 
     50%{
-        transform: translateY(-8px);
+
+        transform: scale(1.2);
+
+        opacity: 0.7;
     }
 }
