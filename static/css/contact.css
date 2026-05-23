@@ -163,3 +163,144 @@ footer {
 .c2 { width:200px; height:200px; background:#6ec1ff; top:150px; right:100px;}
 .c3 { width:100px; height:100px; background:#7b2cff; top:250px; right:50px;}
 .c4 { width:120px; height:120px; background:#ff4d88; top:350px; right:150px;}
+
+.contact-container{
+    width: 100%;
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 28px;
+
+    padding: 70px 5%;
+
+    position: relative;
+    z-index: 2;
+}
+
+.service-card{
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 40px 30px;
+    transition: 0.5s ease;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.service-card:hover{
+    transform: translateY(-12px);
+    box-shadow:
+    0 20px 60px rgba(79,107,255,0.2);
+}
+
+.service-card h3{
+    color: white;
+    font-size: 1.7rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.service-card p{
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+}
+
+.icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.blue{
+    background: rgba(79,107,255,0.2);
+}
+
+.purple{
+    background: rgba(170,90,255,0.2);
+}
+
+.form-sub{
+    margin-bottom: 25px;
+}
+
+.form-card form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-card input,
+.form-card textarea{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 16px;
+    border-radius: 14px;
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus{
+    border-color: #6366f1;
+    box-shadow:
+    0 0 20px rgba(99,102,241,0.25);
+}
+
+.form-card textarea{
+    min-height: 130px;
+    resize: none;
+}
+.floating-orb{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+}
+
+.orb1{
+    width: 300px;
+    height: 300px;
+    background: #4f6bff;
+    top: -100px;
+    left: -100px;
+}
+
+.orb2{
+    width: 280px;
+    height: 280px;
+    background: #8b5cf6;
+    bottom: -100px;
+    right: -100px;
+}
+.contact-cta{
+    padding: 120px 8%;
+    text-align: center;
+    background: #050816;
+}
+
+.contact-cta h2{
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-cta p{
+    color: rgba(255,255,255,0.7);
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
