@@ -14,7 +14,7 @@
 <body class="{% if user.is_authenticated %}logged-in{% endif %}">
 <!-- CINEMATIC PRELOADER -->
 
-<div id="preloader">
+<div id="preloader" class="preloader-hidden">
 
     <div class="cinema-bg"></div>
 
@@ -489,30 +489,41 @@ magneticButtons.forEach(btn => {
 </script>
 <script>
 
-window.addEventListener("load", () => {
+const alreadyShown =
+sessionStorage.getItem("preloaderShown");
 
-    const loader = document.getElementById("preloader");
+const loader =
+document.getElementById("preloader");
 
-    /* CHECK IF LOADER ALREADY SHOWN */
+/* IF FIRST VISIT */
 
-    if(sessionStorage.getItem("preloaderShown")){
+if(!alreadyShown){
 
-        loader.style.display = "none";
+    loader.classList.remove("preloader-hidden");
 
-        return;
-    }
+    window.addEventListener("load", () => {
 
-    /* SHOW LOADER FIRST TIME */
+        sessionStorage.setItem(
+            "preloaderShown",
+            "true"
+        );
 
-    sessionStorage.setItem("preloaderShown", "true");
+        setTimeout(() => {
 
-    setTimeout(() => {
+            loader.classList.add("hide");
 
-        loader.classList.add("hide");
+        }, 3200);
 
-    }, 3200);
+    });
 
-});
+}
+
+/* IF ALREADY VISITED */
+
+else{
+
+    loader.style.display = "none";
+}
 
 </script>
 

@@ -2942,6 +2942,11 @@ font-weight:800;
    CINEMATIC PRELOADER
 =================================== */
 
+.preloader-hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
 #preloader{
 
     position: fixed;
