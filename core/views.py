@@ -43,12 +43,12 @@ def contact(request):
 
         # ✅ SEND EMAIL
         send_mail(
-            "New Lead from Website",
-            f"Name: {name}\nEmail: {email}\nMessage: {user_message}",
-            settings.EMAIL_HOST_USER,
-            ["iamsumitsam01@gmail.com"],  # 🔥 put your real email
-            fail_silently=True
-        )
+    "New Lead from Website",
+    f"Name: {name}\nEmail: {email}\nMessage: {user_message}",
+    settings.EMAIL_HOST_USER,
+    ["iamsumitsam01@gmail.com"],
+    fail_silently=False,
+)
 
         # ✅ SUCCESS MESSAGE
         messages.success(request, "Message sent successfully!")
