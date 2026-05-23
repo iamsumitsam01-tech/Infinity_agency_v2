@@ -132,7 +132,9 @@ body {
 
 /* BUTTON COLORS */
 .blue-btn { background: #0ea5e9; }
-.dark-btn { background: #1e293b; }
+.dark-btn { background: #1e293b;
+display: inline-block;
+margin-top: auto; }
 .orange-btn { background: #f59e0b; }
 
 /* FORM */
@@ -191,7 +193,6 @@ footer {
     border-radius: 28px;
     padding: 30px 26px;
     transition: 0.5s ease;
-    overflow: hidden;
     z-index: 2;
 }
 
@@ -210,6 +211,7 @@ footer {
 
 .service-card p{
     color: #6b7280;
+    margin-bottom: 20px;
     line-height: 1.7;
 }
 
@@ -350,4 +352,18 @@ footer {
 .orb1,
 .orb2 {
   pointer-events: none;
+}
+.service-card,
+.card {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.service-card h3{
+   font-size: 1.9rem;
+}
+
+.service-card p{
+   font-size: 15px;
 }
