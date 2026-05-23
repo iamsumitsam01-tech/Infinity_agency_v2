@@ -275,8 +275,8 @@ footer {
 }
 
 .form-card textarea{
-    min-height: auto;
-    resize: none;
+    min-height: 120px;
+    resize: vertical;
 }
 .floating-orb{
     position: absolute;
@@ -318,4 +318,36 @@ footer {
     margin: auto;
     line-height: 1.8;
     margin-bottom: 40px;
+}
+.contact-form,
+.form-card {
+  position: relative;
+  z-index: 10;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card button {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
+.form-card {
+  position: relative;
+  z-index: 9999;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.floating-orb,
+.circle,
+.orb1,
+.orb2 {
+  pointer-events: none;
 }
