@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}?v=10">
     {% block extra_css %}{% endblock %}
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body class="{% if user.is_authenticated %}logged-in{% endif %}">
@@ -432,6 +433,15 @@ randomImage("slider3");
 
 },3000);
 
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100,
+  });
 </script>
 
 <a href="https://wa.me/919784117930" class="whatsapp-float" target="_blank">
