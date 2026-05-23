@@ -493,6 +493,19 @@ window.addEventListener("load", () => {
 
     const loader = document.getElementById("preloader");
 
+    /* CHECK IF LOADER ALREADY SHOWN */
+
+    if(sessionStorage.getItem("preloaderShown")){
+
+        loader.style.display = "none";
+
+        return;
+    }
+
+    /* SHOW LOADER FIRST TIME */
+
+    sessionStorage.setItem("preloaderShown", "true");
+
     setTimeout(() => {
 
         loader.classList.add("hide");
