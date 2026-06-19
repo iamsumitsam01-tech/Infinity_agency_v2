@@ -1,4 +1,4 @@
-"""
+ode"""
 WSGI config for infinity_agency project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.

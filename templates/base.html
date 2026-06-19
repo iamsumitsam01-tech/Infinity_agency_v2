@@ -45,9 +45,55 @@
     <div class="nav-right">
 
         <!-- GET STARTED OUTSIDE -->
-        <a href="/accounts/google/login/" class="active-btn desktop-btn">
+       {% if user.is_authenticated %}
+
+<div class="profile-dropdown">
+
+    <{% if user.profile.image %}
+    <img
+        src="{{ user.profile.image.url }}"
+        class="profile-pic"
+        id="profileBtn"
+        alt="Profile"
+    >
+{% else %}
+    <img
+        src="{% static 'img/default-user.png' %}"
+        class="profile-pic"
+        id="profileBtn"
+        alt="Profile"
+    >
+{% endif %}
+
+    <div class="dropdown-menu" id="dropdownMenu">
+
+        <div class="profile-name">
+            {{ user.username }}
+        </div>
+
+        <a href="{% url 'profile' %}">
+            Change Profile
+        </a>
+
+        <a href="#" id="logoutBtn">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+{% else %}
+
+<a
+    href="#"
+    class="active-btn desktop-btn"
+    id="getStartedBtn"
+>
     Login
 </a>
+
+{% endif %}
 
         <!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">

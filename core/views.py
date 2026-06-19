@@ -160,3 +160,29 @@ def checkout(request):
 def success(request):
     return render(request,
 "success.html")
+    
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def profile(request):
+
+    if request.method == "POST":
+
+        request.user.username = request.POST.get(
+            "username"
+        )
+
+        if request.FILES.get("image"):
+
+            request.user.profile.image = (
+                request.FILES["image"]
+            )
+
+            request.user.profile.save()
+
+        request.user.save()
+
+    return render(
+        request,
+        "profile.html"
+    )    

@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'bharatinfinity.com',
     'www.bharatinfinity.com',
     'infinity-agency-v2.onrender.com',
+    "*"
 ]
 
 
@@ -134,7 +135,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
