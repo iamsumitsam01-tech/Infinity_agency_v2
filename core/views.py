@@ -3,7 +3,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from urllib.parse import quote
 from django.core.mail import send_mail
-from .models import Service, Project, Contact
+from .models import Service, Project, Contact, Profile
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -170,7 +170,12 @@ def profile(request):
     )
 
     if request.method == "POST":
-        profile.name = request.POST.get("name")
+
+        request.user.username = request.POST.get(
+            "username",
+            request.user.username
+        )
+        request.user.save()
 
         if request.FILES.get("image"):
             profile.image = request.FILES["image"]
@@ -181,5 +186,7 @@ def profile(request):
     return render(
         request,
         "profile.html",
-        {"profile": profile}
+        {
+            "profile": profile
+        }
     )

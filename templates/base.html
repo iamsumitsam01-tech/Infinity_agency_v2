@@ -44,13 +44,28 @@
 
     <div class="nav-right">
 
- {% if user.is_authenticated %}
-<img
-    src="{% static 'img/default-user.jpeg' %}"
-    class="profile-pic"
-    id="profileBtn"
-    alt="Profile"
->
+{% load static %}
+
+{% if user.is_authenticated %}
+
+<div class="profile-dropdown">
+
+    {% if profile and profile.image %}
+        <img
+            src="{{ profile.image.url }}"
+            class="profile-pic"
+            id="profileBtn"
+        >
+    {% else %}
+        <img
+            src="{% static 'img/default-user.jpeg' %}"
+            class="profile-pic"
+            id="profileBtn"
+        >
+    {% endif %}
+
+</div>
+
 {% endif %}
 
 <a
