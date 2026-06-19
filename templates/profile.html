@@ -4,10 +4,19 @@
 
     {% csrf_token %}
 
+    {% load static %}
+
+{% if profile.image %}
     <img
-        src="{{ user.profile.image.url }}"
+        src="{{ profile.image.url }}"
         width="150"
     >
+{% else %}
+    <img
+        src="{% static 'img/default-user.png' %}"
+        width="150"
+    >
+{% endif %}
 
     <br><br>
 

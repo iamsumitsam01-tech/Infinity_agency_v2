@@ -165,24 +165,21 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def profile(request):
+    profile, created = Profile.objects.get_or_create(
+        user=request.user
+    )
 
     if request.method == "POST":
-
-        request.user.username = request.POST.get(
-            "username"
-        )
+        profile.name = request.POST.get("name")
 
         if request.FILES.get("image"):
+            profile.image = request.FILES["image"]
 
-            request.user.profile.image = (
-                request.FILES["image"]
-            )
-
-            request.user.profile.save()
-
-        request.user.save()
+        profile.save()
+        return redirect("profile")
 
     return render(
         request,
-        "profile.html"
-    )    
+        "profile.html",
+        {"profile": profile}
+    )
