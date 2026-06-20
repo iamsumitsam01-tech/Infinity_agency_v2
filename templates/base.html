@@ -42,15 +42,13 @@
    <span>Infinity</span>
 </div>
 
-    <div class="nav-right">
-
+<div class="nav-right">
 {% load static %}
 
 {% if user.is_authenticated %}
 
 <div class="profile-dropdown">
-
-    {% if user.is_authenticated and user.profile.image %}
+    {% if user.profile.image %}
         <img
             src="{{ user.profile.image.url }}"
             class="profile-pic"
@@ -63,13 +61,12 @@
             id="profileBtn"
         >
     {% endif %}
-
 </div>
 
-{% endif %}
+{% else %}
 
 <a
-    href="#"
+    href="{% url 'login' %}"
     class="active-btn desktop-btn"
     id="getStartedBtn"
 >
@@ -77,7 +74,7 @@
 </a>
 
 {% endif %}
-
+</div>
         <!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
             ☰
