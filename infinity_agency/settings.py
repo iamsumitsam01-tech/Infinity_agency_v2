@@ -24,14 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-monlu2ak_kyt39=t@ykucm*w3w5lch1zuiyl**so*-7ustgbzd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'bharatinfinity.com',
-    'www.bharatinfinity.com',
-    'infinity-agency-v2.onrender.com',
-    "*"
-]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
