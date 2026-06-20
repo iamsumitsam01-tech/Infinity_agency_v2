@@ -43,37 +43,41 @@
 </div>
 
 <div class="nav-right">
-{% load static %}
+    {% load static %}
 
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
-<div class="profile-dropdown">
-    {% if user.profile.image %}
-        <img
-            src="{{ user.profile.image.url }}"
-            class="profile-pic"
-            id="profileBtn"
-        >
+        <div class="profile-dropdown">
+            {% if user.profile.image %}
+                <a href="{% url 'profile' %}">
+                    <img
+                        src="{{ user.profile.image.url }}"
+                        class="profile-pic"
+                        id="profileBtn"
+                    >
+                </a>
+            {% else %}
+                <a href="{% url 'profile' %}">
+                    <img
+                        src="{% static 'img/default-user.png' %}"
+                        class="profile-pic"
+                        id="profileBtn"
+                    >
+                </a>
+            {% endif %}
+        </div>
+
     {% else %}
-        <img
-            src="{% static 'img/default-user.png' %}"
-            class="profile-pic"
-            id="profileBtn"
+
+        <a
+            href="{% url 'login' %}"
+            class="active-btn desktop-btn"
+            id="getStartedBtn"
         >
+            Login
+        </a>
+
     {% endif %}
-</div>
-
-{% else %}
-
-<a
-    href="{% url 'login' %}"
-    class="active-btn desktop-btn"
-    id="getStartedBtn"
->
-    Login
-</a>
-
-{% endif %}
 </div>
         <!-- HAMBURGER -->
         <div class="hamburger" id="hamburger">
