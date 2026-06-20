@@ -50,15 +50,15 @@
 
 <div class="profile-dropdown">
 
-    {% if profile and profile.image %}
+    {% if user.is_authenticated and user.profile.image %}
         <img
-            src="{{ profile.image.url }}"
+            src="{{ user.profile.image.url }}"
             class="profile-pic"
             id="profileBtn"
         >
     {% else %}
         <img
-            src="{% static 'img/default-user.jpeg' %}"
+            src="{% static 'img/default-user.png' %}"
             class="profile-pic"
             id="profileBtn"
         >
